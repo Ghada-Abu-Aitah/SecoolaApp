@@ -15,10 +15,10 @@ class Bottom_Navigation extends StatefulWidget {
 class _Bottom_NavigationState extends State<Bottom_Navigation> {
   int _currentIndex = 0;
   final List<Widget> Pages = <Widget>[
-    Home(),
-    My_course(),
-    Wishlist(),
-    Account(),
+    const Home(),
+    const My_course(),
+    const Wishlist(),
+    const Account(),
   ];
 
   @override
@@ -39,9 +39,9 @@ class _Bottom_NavigationState extends State<Bottom_Navigation> {
         elevation: 10,
         selectedItemColor: Colors.blue,
         unselectedItemColor: Colors.grey,
-        unselectedIconTheme: IconThemeData(color: Colors.grey),
+        unselectedIconTheme: const IconThemeData(color: Colors.grey),
         selectedFontSize: 14.sp,
-        items: [
+        items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.circle),
             label: 'Explore',

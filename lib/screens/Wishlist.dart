@@ -11,25 +11,29 @@ class Wishlist extends StatefulWidget {
 }
 
 class _WishlistState extends State<Wishlist> {
+  TextEditingController _searchController = TextEditingController();
   bool result = true;
+
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white,
         ),
         toolbarHeight: 186.h,
-        backgroundColor: Color(0xFF00A9B7),
-        shape: RoundedRectangleBorder(
+        backgroundColor: const Color(0xFF00A9B7),
+        shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(30),
           ),
         ),
-        //centerTitle: false,
-
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -50,20 +54,23 @@ class _WishlistState extends State<Wishlist> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: SingleChildScrollView(
                 child: Container(
+                  width: 335.w,
+                  height: 48.h,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: const Icon(Icons.search, color: Colors.grey),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(Icons.search, color: Colors.grey),
                       ),
                       Expanded(
                         child: TextField(
-                          style: TextStyle(color: Colors.white),
-                          decoration: InputDecoration(
+                          controller: _searchController,
+                          style: const TextStyle(color: Colors.black),
+                          decoration: const InputDecoration(
                             hintText: 'Search for anything..',
                             hintStyle: TextStyle(color: Colors.grey),
                             border: InputBorder.none,

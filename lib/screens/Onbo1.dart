@@ -16,11 +16,9 @@ class BoItem {
   final String text;
   final String imageUrl;
 
-
   BoItem({
     required this.text,
     required this.imageUrl,
-
   });
 }
 
@@ -33,19 +31,16 @@ class _Onbo1State extends State<Onbo1> {
       text: 'Join and study together',
       imageUrl:
           'https://trainghiemso.vn/wp-content/uploads/2022/03/Study-Together.png',
-
     ),
     BoItem(
       text: 'Find your mentors',
       imageUrl:
           'https://media.npr.org/assets/img/2019/10/25/mentorship-ask1_web-site-copy-1-_wide-ef7b4604d31a1ac0a5aa483ecef2b6fbf9ba0781.png',
-
     ),
     BoItem(
       text: 'Explore new knowledge',
       imageUrl:
           'https://img.freepik.com/free-vector/focused-people-studying-online-school_74855-5834.jpg',
-
     ),
   ];
 
@@ -64,13 +59,13 @@ class _Onbo1State extends State<Onbo1> {
         backgroundColor: Colors.white,
         centerTitle: false,
         bottom: PreferredSize(
-          preferredSize: Size.fromHeight(10),
+          preferredSize: const Size.fromHeight(10),
           child: Align(
             alignment: Alignment.center,
             child: SmoothPageIndicator(
               controller: _pageController,
               count: items.length,
-              effect: ExpandingDotsEffect(
+              effect: const ExpandingDotsEffect(
                 activeDotColor: Color(0xFF00A9B7),
                 dotColor: Color(0xFF44DDEF),
                 dotHeight: 4,
@@ -97,8 +92,9 @@ class _Onbo1State extends State<Onbo1> {
                       imageUrl: item.imageUrl,
                       fit: BoxFit.cover,
                       placeholder: (context, url) =>
-                          CircularProgressIndicator(),
-                      errorWidget: (context, url, error) => Icon(Icons.error),
+                          const CircularProgressIndicator(),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
                     ),
                     SizedBox(height: 50.h),
                     Padding(
@@ -129,12 +125,12 @@ class _Onbo1State extends State<Onbo1> {
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Sign_up(),
+                                  builder: (context) => const Sign_up(),
                                 ),
                               );
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: Color(0xFF00A9B7),
+                              primary: const Color(0xFF00A9B7),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -155,7 +151,7 @@ class _Onbo1State extends State<Onbo1> {
                               Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => Login(),
+                                  builder: (context) => const Login(),
                                 ),
                               );
                             },

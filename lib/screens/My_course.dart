@@ -13,18 +13,25 @@ class My_course extends StatefulWidget {
 }
 
 class My_courseState extends State<My_course> {
+  TextEditingController _searchController = TextEditingController();
+
   bool result = true;
+
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white,
         ),
         toolbarHeight: 186.h,
-        backgroundColor: Color(0xFF00A9B7),
+        backgroundColor: const Color(0xFF00A9B7),
         shape: RoundedRectangleBorder(
           borderRadius: BorderRadius.vertical(
             bottom: Radius.circular(30.r),
@@ -50,20 +57,23 @@ class My_courseState extends State<My_course> {
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: SingleChildScrollView(
                 child: Container(
+                  width: 335.w,
+                  height: 48.h,
                   decoration: BoxDecoration(
                     color: Colors.white,
                     borderRadius: BorderRadius.circular(15),
                   ),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: const Icon(Icons.search, color: Colors.grey),
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(Icons.search, color: Colors.grey),
                       ),
                       Expanded(
                         child: TextField(
-                          style: TextStyle(color: Colors.white),
-                          decoration: InputDecoration(
+                          controller: _searchController,
+                          style: const TextStyle(color: Colors.black),
+                          decoration: const InputDecoration(
                             hintText: 'Search for anything..',
                             hintStyle: TextStyle(color: Colors.grey),
                             border: InputBorder.none,
@@ -89,7 +99,7 @@ class My_courseState extends State<My_course> {
                   ElevatedButton(
                     onPressed: () {},
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF00A9B7),
+                      primary: const Color(0xFF00A9B7),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(15),
                       ),
@@ -111,8 +121,10 @@ class My_courseState extends State<My_course> {
                   ),
                   ElevatedButton(
                     onPressed: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Completed()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Completed()));
                     },
                     style: ElevatedButton.styleFrom(
                       primary: Colors.grey.shade100,
@@ -138,56 +150,29 @@ class My_courseState extends State<My_course> {
                 ],
               ),
               SizedBox(height: 30.h),
-              Container(
-                child: Column(
-                  children: [
-                    Course(),
-                    SizedBox(height: 15.h),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Progress',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
+              Column(
+                children: [
+                  const Course(),
+                  SizedBox(height: 15.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Progress',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 12.sp,
+                              fontFamily: 'SF Pro Rounded',
                             ),
-                            SizedBox(height: 5.h),
-                            Align(
-                              child: Text(
-                                '20/29 lesson',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 14.sp,
-                                  fontFamily: 'SF Pro Rounded',
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(width: 100.w),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Due Time',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
-                            ),
-                            SizedBox(height: 5.h),
-                            Text(
-                              'November 2,2021',
+                          ),
+                          SizedBox(height: 5.h),
+                          Align(
+                            child: Text(
+                              '20/29 lesson',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.normal,
@@ -195,79 +180,79 @@ class My_courseState extends State<My_course> {
                                 fontFamily: 'SF Pro Rounded',
                               ),
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 100.w),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Due Time',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 12.sp,
+                              fontFamily: 'SF Pro Rounded',
+                            ),
+                          ),
+                          SizedBox(height: 5.h),
+                          Text(
+                            'November 2,2021',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 14.sp,
+                              fontFamily: 'SF Pro Rounded',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
               SizedBox(height: 25.h),
               InkWell(
                 onTap: () {
-                  Navigator.pushReplacement(context,
-                      MaterialPageRoute(builder: (context) => const Continue_c()));
+                  Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Continue_c()));
                 },
                 child: LinearPercentIndicator(
                   animation: true,
                   animationDuration: 1000,
                   lineHeight: 10.h,
                   percent: 0.8,
-                  progressColor: Color(0xFF00CDB1),
-                  backgroundColor: Color(0xFFEAEAEA),
+                  progressColor: const Color(0xFF00CDB1),
+                  backgroundColor: const Color(0xFFEAEAEA),
                 ),
               ),
               SizedBox(height: 30.h),
-              Container(
-                child: Column(
-                  children: [
-                    Course(),
-                    SizedBox(height: 15.h),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Progress',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
+              Column(
+                children: [
+                  const Course(),
+                  SizedBox(height: 15.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Progress',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 12.sp,
+                              fontFamily: 'SF Pro Rounded',
                             ),
-                            SizedBox(height: 5.h),
-                            Align(
-                              child: Text(
-                                '7/32 lesson',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 14.sp,
-                                  fontFamily: 'SF Pro Rounded',
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(width: 100.w),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Due Time',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
-                            ),
-                            SizedBox(height: 5.h),
-                            Text(
-                              'August 24,2021',
+                          ),
+                          SizedBox(height: 5.h),
+                          Align(
+                            child: Text(
+                              '7/32 lesson',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.normal,
@@ -275,12 +260,37 @@ class My_courseState extends State<My_course> {
                                 fontFamily: 'SF Pro Rounded',
                               ),
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 100.w),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Due Time',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 12.sp,
+                              fontFamily: 'SF Pro Rounded',
+                            ),
+                          ),
+                          SizedBox(height: 5.h),
+                          Text(
+                            'August 24,2021',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 14.sp,
+                              fontFamily: 'SF Pro Rounded',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
               SizedBox(height: 25.h),
               LinearPercentIndicator(
@@ -288,60 +298,33 @@ class My_courseState extends State<My_course> {
                 animationDuration: 1000,
                 lineHeight: 10.h,
                 percent: 0.2,
-                progressColor: Color(0xFF00CDB1),
-                backgroundColor: Color(0xFFEAEAEA),
+                progressColor: const Color(0xFF00CDB1),
+                backgroundColor: const Color(0xFFEAEAEA),
               ),
               SizedBox(height: 30.h),
-              Container(
-                child: Column(
-                  children: [
-                    Course(),
-                    SizedBox(height: 15.h),
-                    Row(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Progress',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
+              Column(
+                children: [
+                  const Course(),
+                  SizedBox(height: 15.h),
+                  Row(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Progress',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 12.sp,
+                              fontFamily: 'SF Pro Rounded',
                             ),
-                            SizedBox(height: 5.h),
-                            Align(
-                              child: Text(
-                                '28/40 lesson',
-                                style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.normal,
-                                  fontSize: 14.sp,
-                                  fontFamily: 'SF Pro Rounded',
-                                ),
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(width: 100.w),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text(
-                              'Due Time',
-                              style: TextStyle(
-                                color: Colors.grey,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 12.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
-                            ),
-                            SizedBox(height: 5.h),
-                            Text(
-                              'November 2,2021',
+                          ),
+                          SizedBox(height: 5.h),
+                          Align(
+                            child: Text(
+                              '28/40 lesson',
                               style: TextStyle(
                                 color: Colors.black,
                                 fontWeight: FontWeight.normal,
@@ -349,12 +332,37 @@ class My_courseState extends State<My_course> {
                                 fontFamily: 'SF Pro Rounded',
                               ),
                             ),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
+                          ),
+                        ],
+                      ),
+                      SizedBox(width: 100.w),
+                      Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Due Time',
+                            style: TextStyle(
+                              color: Colors.grey,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 12.sp,
+                              fontFamily: 'SF Pro Rounded',
+                            ),
+                          ),
+                          SizedBox(height: 5.h),
+                          Text(
+                            'November 2,2021',
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 14.sp,
+                              fontFamily: 'SF Pro Rounded',
+                            ),
+                          ),
+                        ],
+                      ),
+                    ],
+                  ),
+                ],
               ),
               SizedBox(height: 25.h),
               LinearPercentIndicator(
@@ -362,8 +370,8 @@ class My_courseState extends State<My_course> {
                 animationDuration: 1000,
                 lineHeight: 10.h,
                 percent: 0.6,
-                progressColor: Color(0xFF00CDB1),
-                backgroundColor: Color(0xFFEAEAEA),
+                progressColor: const Color(0xFF00CDB1),
+                backgroundColor: const Color(0xFFEAEAEA),
               ),
               SizedBox(height: 25.h),
             ],

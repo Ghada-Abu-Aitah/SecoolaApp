@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:secoola/screens/Bottom_Navigation.dart';
 
 class Not_BottomSheet extends StatefulWidget {
   const Not_BottomSheet({super.key});
@@ -16,11 +17,23 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Scaffold(
-        backgroundColor: Color(0xFFFAFAFA),
+        backgroundColor: const Color(0xFFFAFAFA),
         appBar: AppBar(
-          backgroundColor: Color(0xFFFAFAFA),
+          leading: IconButton(
+            icon: const Icon(
+              Icons.arrow_back_ios,
+              color: Colors.black,
+            ),
+            onPressed: () {
+              Navigator.pushReplacement(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const Bottom_Navigation()));
+            },
+          ),
+          backgroundColor: const Color(0xFFFAFAFA),
           elevation: 0,
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
             color: Colors.white,
           ),
           centerTitle: true,
@@ -28,7 +41,6 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                // Center the Row within the Column
                 children: [
                   Text(
                     'Notification',
@@ -40,7 +52,7 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
                     ),
                   ),
                   SizedBox(width: 10.w),
-                  Icon(
+                  const Icon(
                     Icons.waving_hand_rounded,
                     color: Colors.orangeAccent,
                   ),
@@ -84,7 +96,7 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
                           children: [
                             SizedBox(width: 10.w),
                             IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.circle,
                                 size: 28,
                                 color: Color(0xFF00A9B7),
@@ -120,7 +132,8 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   IconButton(
-                                    icon: Icon(Icons.chevron_right_outlined),
+                                    icon: const Icon(
+                                        Icons.chevron_right_outlined),
                                     onPressed: () {},
                                   ),
                                 ],
@@ -151,7 +164,7 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
                           children: [
                             SizedBox(width: 10.w),
                             IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.notifications,
                                 size: 28,
                                 color: Color(0xFF00A9B7),
@@ -187,7 +200,8 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   IconButton(
-                                    icon: Icon(Icons.chevron_right_outlined),
+                                    icon: const Icon(
+                                        Icons.chevron_right_outlined),
                                     onPressed: () {},
                                   ),
                                 ],
@@ -231,7 +245,7 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
                           children: [
                             SizedBox(width: 10.w),
                             IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.cloud_download,
                                 size: 28,
                                 color: Color(0xFF00A9B7),
@@ -267,7 +281,8 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   IconButton(
-                                    icon: Icon(Icons.chevron_right_outlined),
+                                    icon: const Icon(
+                                        Icons.chevron_right_outlined),
                                     onPressed: () {},
                                   ),
                                 ],
@@ -298,7 +313,7 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
                           children: [
                             SizedBox(width: 10.w),
                             IconButton(
-                              icon: Icon(
+                              icon: const Icon(
                                 Icons.sunny,
                                 size: 28,
                                 color: Color(0xFF00A9B7),
@@ -317,7 +332,7 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
                                     fontFamily: 'SF Pro Rounded',
                                   ),
                                 ),
-                                SizedBox(height: 10),
+                                const SizedBox(height: 10),
                                 Text(
                                   'Get the best offer only for you',
                                   style: TextStyle(
@@ -334,7 +349,8 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
                                 mainAxisAlignment: MainAxisAlignment.end,
                                 children: [
                                   IconButton(
-                                    icon: Icon(Icons.chevron_right_outlined),
+                                    icon: const Icon(
+                                        Icons.chevron_right_outlined),
                                     onPressed: () {},
                                   ),
                                 ],

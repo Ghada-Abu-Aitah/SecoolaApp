@@ -1,9 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/screens/Bottom_Navigation.dart';
-import 'package:secoola/screens/Home.dart';
-import 'package:secoola/screens/My_course.dart';
 
 class Completed extends StatefulWidget {
   const Completed({super.key});
@@ -84,7 +81,8 @@ class _CompletedState extends State<Completed> {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Bottom_Navigation()));
+                                      builder: (context) =>
+                                          Bottom_Navigation()));
                             },
                             style: ElevatedButton.styleFrom(
                               primary: Color(0xFF00A9B7),
@@ -108,7 +106,8 @@ class _CompletedState extends State<Completed> {
                               Navigator.pushReplacement(
                                   context,
                                   MaterialPageRoute(
-                                      builder: (context) => Bottom_Navigation()));
+                                      builder: (context) =>
+                                          Bottom_Navigation()));
                             },
                             child: Text(
                               'Back to my course',

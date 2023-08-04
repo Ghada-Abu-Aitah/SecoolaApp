@@ -30,21 +30,18 @@ class _Set_passState extends State<Set_pass> {
 
   validator() {
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
-      print('validated');
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Login()));
-    } else {
-      print('Not Validated');
-    }
+          context, MaterialPageRoute(builder: (context) => const Login()));
+    } else {}
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Set password',
           style: TextStyle(
             color: Colors.black,
@@ -54,7 +51,7 @@ class _Set_passState extends State<Set_pass> {
         ),
         backgroundColor: Colors.white,
         elevation: 0,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white,
         ),
         leading: IconButton(
@@ -65,8 +62,8 @@ class _Set_passState extends State<Set_pass> {
           ),
           onPressed: () {
             if (result ?? true) {
-              Navigator.pushReplacement(
-                  context, MaterialPageRoute(builder: (context) => Verify()));
+              Navigator.pushReplacement(context,
+                  MaterialPageRoute(builder: (context) => const Verify()));
             }
           },
         ),
@@ -90,7 +87,7 @@ class _Set_passState extends State<Set_pass> {
                     ),
                   ),
                   SizedBox(width: 20.w),
-                  Icon(Icons.lock_rounded, color: Colors.orange),
+                  const Icon(Icons.lock_rounded, color: Colors.orange),
                 ],
               ),
             ),
@@ -128,14 +125,14 @@ class _Set_passState extends State<Set_pass> {
                           obscureText: _obscurePassword,
                           decoration: InputDecoration(
                             labelText: "Your Password",
-                            prefixIcon: Icon(Icons.lock),
-                            prefixIconColor: Color(0xFF00A9B7),
+                            prefixIcon: const Icon(Icons.lock),
+                            prefixIconColor: const Color(0xFF00A9B7),
                             border: InputBorder.none,
-                            contentPadding: EdgeInsets.symmetric(
+                            contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 16.0, vertical: 12.0),
                             focusedBorder: OutlineInputBorder(
                               borderSide: BorderSide(
-                                color: Color(0xFF00A9B7),
+                                color: const Color(0xFF00A9B7),
                                 width: 1.w,
                               ),
                               borderRadius: BorderRadius.circular(15),
@@ -160,8 +157,9 @@ class _Set_passState extends State<Set_pass> {
                             }
                             if (value.trim().length < 6) {
                               return "password should not be less than 6 characters";
-                            } else
+                            } else {
                               return null;
+                            }
                           }),
                     ),
                     SizedBox(height: 35.h),
@@ -177,7 +175,7 @@ class _Set_passState extends State<Set_pass> {
                               });
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: Color(0xFF00A9B7),
+                              primary: const Color(0xFF00A9B7),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),

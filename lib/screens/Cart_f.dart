@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:secoola/screens/Pay_Success.dart';
 import 'package:secoola/screens/Payment.dart';
 import 'package:secoola/widgets/NotWidget.dart';
 
@@ -34,9 +33,9 @@ class _Cart_fState extends State<Cart_f> {
                 ),
               ),
               SizedBox(height: 20.h),
-              NotWidget(),
+              const NotWidget(),
               SizedBox(height: 40.h),
-              NotWidget(),
+              const NotWidget(),
             ],
           ),
         ),
@@ -49,7 +48,7 @@ class _Cart_fState extends State<Cart_f> {
               color: Colors.grey.shade200.withOpacity(0.50),
               spreadRadius: 15,
               blurRadius: 5,
-              offset: Offset(0, 10),
+              offset: const Offset(0, 10),
             ),
           ],
         ),
@@ -79,7 +78,6 @@ class _Cart_fState extends State<Cart_f> {
                       // Button widget
                       ElevatedButton(
                         onPressed: () {},
-                        child: Text('VEKTORABELAJAR   :'),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.blue.shade50,
                           onPrimary: Colors.blue,
@@ -87,6 +85,7 @@ class _Cart_fState extends State<Cart_f> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
+                        child: const Text('VEKTORABELAJAR   :'),
                       ),
                     ],
                   ),
@@ -130,23 +129,23 @@ class _Cart_fState extends State<Cart_f> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Payment(),
+                              builder: (context) => const Payment(),
                             ),
                           );
                         },
-                        child: Text(
-                          'Checkout',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                          ),
-                        ),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFF00A9B7),
+                          primary: const Color(0xFF00A9B7),
                           onPrimary: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
                           minimumSize: Size(157.w, 52.h),
+                        ),
+                        child: Text(
+                          'Checkout',
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                          ),
                         ),
                       ),
                     ],

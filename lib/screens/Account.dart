@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/screens/Login.dart';
+import 'package:secoola/screens/Not_BottomSheet.dart';
+import 'package:secoola/screens/Payment.dart';
+import 'package:secoola/screens/faqs.dart';
 
 class Account extends StatefulWidget {
   const Account({super.key});
@@ -12,17 +15,16 @@ class Account extends StatefulWidget {
 class _AccountState extends State<Account> {
   bool result = true;
 
-
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Scaffold(
-        backgroundColor: Color(0xFFFAFAFA),
+        backgroundColor: const Color(0xFFFAFAFA),
         appBar: AppBar(
-          backgroundColor: Color(0xFFFAFAFA),
+          backgroundColor: const Color(0xFFFAFAFA),
           elevation: 0,
-          iconTheme: IconThemeData(
+          iconTheme: const IconThemeData(
             color: Colors.white,
           ),
           title: Column(
@@ -33,10 +35,10 @@ class _AccountState extends State<Account> {
                   Text(
                     'Profile',
                     style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontStyle: FontStyle.normal,
-                        fontSize: 26.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.normal,
+                      fontStyle: FontStyle.normal,
+                      fontSize: 26.sp,
                     ),
                   ),
                 ],
@@ -55,17 +57,13 @@ class _AccountState extends State<Account> {
                   children: [
                     Row(
                       children: [
-                        SizedBox(width: 10.w
-
-
-                        ),
+                        SizedBox(width: 10.w),
                         Container(
                           width: 40.w,
                           height: 40.h,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(10),
-                              color: Colors.yellow.shade100
-                          ),
+                              color: Colors.yellow.shade100),
                         ),
                         SizedBox(width: 20.w),
                         Column(
@@ -94,7 +92,7 @@ class _AccountState extends State<Account> {
                         ),
                         SizedBox(width: 120.w),
                         IconButton(
-                          icon: Icon(Icons.edit),
+                          icon: const Icon(Icons.edit),
                           onPressed: () {},
                         ),
                       ],
@@ -124,17 +122,63 @@ class _AccountState extends State<Account> {
                         ),
                         child: Column(
                           children: [
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) =>
+                                            const Not_BottomSheet()));
+                              },
+                              child: Row(
+                                children: [
+                                  SizedBox(width: 10.w),
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.notifications,
+                                      size: 18,
+                                    ),
+                                    onPressed: () {},
+                                  ),
+                                  SizedBox(width: 15.w),
+                                  Text(
+                                    'Notifications',
+                                    style: TextStyle(
+                                      color: Colors.grey.shade800,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 14.sp,
+                                      fontFamily: 'SF Pro Rounded',
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        IconButton(
+                                          icon: const Icon(
+                                              Icons.chevron_right_outlined),
+                                          onPressed: () {},
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            SizedBox(height: 10.h),
                             Row(
                               children: [
                                 SizedBox(width: 10.w),
                                 IconButton(
-                                  icon: Icon(Icons.notifications,
-                                  size: 18,),
+                                  icon: const Icon(
+                                    Icons.lock_rounded,
+                                    size: 18,
+                                  ),
                                   onPressed: () {},
                                 ),
                                 SizedBox(width: 15.w),
                                 Text(
-                                  'Notifications',
+                                  'Security',
                                   style: TextStyle(
                                     color: Colors.grey.shade800,
                                     fontWeight: FontWeight.normal,
@@ -147,7 +191,8 @@ class _AccountState extends State<Account> {
                                     mainAxisAlignment: MainAxisAlignment.end,
                                     children: [
                                       IconButton(
-                                        icon: Icon(Icons.chevron_right_outlined),
+                                        icon: const Icon(
+                                            Icons.chevron_right_outlined),
                                         onPressed: () {},
                                       ),
                                     ],
@@ -155,73 +200,39 @@ class _AccountState extends State<Account> {
                                 ),
                               ],
                             ),
-
-                        SizedBox(height: 10.h),
-                        Row(
-                          children: [
-                            SizedBox(width: 10.w),
-                            IconButton(
-                              icon: Icon(Icons.lock_rounded,
-                              size: 18,
-                              ),
-
-                              onPressed: () {},
-                            ),
-                            SizedBox(width: 15.w),
-                            Text(
-                              'Security',
-                              style: TextStyle(
-                                color: Colors.grey.shade800,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
-                            ),
-                            Expanded(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  IconButton(
-                                    icon: Icon(Icons.chevron_right_outlined),
-                                    onPressed: () {},
+                            SizedBox(height: 10.h),
+                            Row(
+                              children: [
+                                SizedBox(width: 10.w),
+                                IconButton(
+                                  icon:
+                                      const Icon(Icons.email_rounded, size: 18),
+                                  onPressed: () {},
+                                ),
+                                SizedBox(width: 15.w),
+                                Text(
+                                  'Email preference',
+                                  style: TextStyle(
+                                    color: Colors.grey.shade800,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14.sp,
+                                    fontFamily: 'SF Pro Rounded',
                                   ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 10.h),
-                        Row(
-                          children: [
-                            SizedBox(width: 10.w),
-                            IconButton(
-                              icon: Icon(Icons.email_rounded,
-                              size: 18,),
-                              onPressed: () {},
-                            ),
-                            SizedBox(width: 15.w),
-                            Text(
-                              'Email preference',
-                              style: TextStyle(
-                                color: Colors.grey.shade800,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
-                            ),
-                            Expanded(
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.end,
-                                children: [
-                                  IconButton(
-                                    icon: Icon(Icons.chevron_right_outlined),
-                                    onPressed: () {},
+                                ),
+                                Expanded(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      IconButton(
+                                        icon: const Icon(
+                                            Icons.chevron_right_outlined),
+                                        onPressed: () {},
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
+                                ),
+                              ],
                             ),
-                          ],
-                        ),
                           ],
                         ),
                       ),
@@ -252,101 +263,118 @@ class _AccountState extends State<Account> {
                         child: Column(
                           children: [
                             Row(
-                      children: [
-                        SizedBox(width: 10.w),
-                        IconButton(
-                          icon: Icon(Icons.library_books_rounded),
-                          onPressed: () {},
-                        ),
-                        SizedBox(width: 15.w),
-                        Text(
-                          'Certificate',
-                          style: TextStyle(
-                            color: Colors.grey.shade800,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 14.sp,
-                            fontFamily: 'SF Pro Rounded',
-                          ),
-                        ),
-                        Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              IconButton(
-                                icon: Icon(Icons.chevron_right_outlined),
-                                onPressed: () {},
+                              children: [
+                                SizedBox(width: 10.w),
+                                IconButton(
+                                  icon: const Icon(Icons.library_books_rounded),
+                                  onPressed: () {},
+                                ),
+                                SizedBox(width: 15.w),
+                                Text(
+                                  'Certificate',
+                                  style: TextStyle(
+                                    color: Colors.grey.shade800,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14.sp,
+                                    fontFamily: 'SF Pro Rounded',
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      IconButton(
+                                        icon: const Icon(
+                                            Icons.chevron_right_outlined),
+                                        onPressed: () {},
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 10.h),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const Payment()));
+                              },
+                              child: Row(
+                                children: [
+                                  SizedBox(width: 10.w),
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.payments,
+                                      size: 18,
+                                    ),
+                                    onPressed: () {},
+                                  ),
+                                  SizedBox(width: 15.w),
+                                  Text(
+                                    'Payment',
+                                    style: TextStyle(
+                                      color: Colors.grey.shade800,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 14.sp,
+                                      fontFamily: 'SF Pro Rounded',
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        IconButton(
+                                          icon: const Icon(
+                                              Icons.chevron_right_outlined),
+                                          onPressed: () {},
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                            SizedBox(height: 10.h),
+                            Row(
+                              children: [
+                                SizedBox(width: 10.w),
+                                IconButton(
+                                  icon: const Icon(
+                                    Icons.history,
+                                    size: 18,
+                                  ),
+                                  onPressed: () {},
+                                ),
+                                SizedBox(width: 15.w),
+                                Text(
+                                  'History',
+                                  style: TextStyle(
+                                    color: Colors.grey.shade800,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14.sp,
+                                    fontFamily: 'SF Pro Rounded',
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      IconButton(
+                                        icon: const Icon(
+                                            Icons.chevron_right_outlined),
+                                        onPressed: () {},
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                    SizedBox(height: 10.h),
-                    Row(
-                      children: [
-                        SizedBox(width: 10.w),
-                        IconButton(
-                          icon: Icon(Icons.payments,size: 18,),
-                          onPressed: () {},
-                        ),
-                        SizedBox(width: 15.w),
-                        Text(
-                          'Payment',
-                          style: TextStyle(
-                            color: Colors.grey.shade800,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 14.sp,
-                            fontFamily: 'SF Pro Rounded',
-                          ),
-                        ),
-                        Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              IconButton(
-                                icon: Icon(Icons.chevron_right_outlined),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                    SizedBox(height: 10.h),
-                    Row(
-                      children: [
-                        SizedBox(width: 10.w),
-                        IconButton(
-                          icon: Icon(Icons.history,size: 18,),
-                          onPressed: () {},
-                        ),
-                        SizedBox(width: 15.w),
-                        Text(
-                          'History',
-                          style: TextStyle(
-                            color: Colors.grey.shade800,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 14.sp,
-                            fontFamily: 'SF Pro Rounded',
-                          ),
-                        ),
-                        Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              IconButton(
-                                icon: Icon(Icons.chevron_right_outlined),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                  ],
-                ),
-              ),
-        ),
                     SizedBox(height: 40.h),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -361,91 +389,108 @@ class _AccountState extends State<Account> {
                       ),
                     ),
                     SizedBox(height: 20.h),
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 15),
-            child: Container(
-              height: 110.h,
-              width: 325.w,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Column(
-                children: [
-                  Row(
-                      children: [
-                        SizedBox(width: 10.w),
-                        IconButton(
-                          icon: Icon(Icons.star,
-                          size: 18,),
-                          onPressed: () {},
+                    Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 15),
+                      child: Container(
+                        height: 110.h,
+                        width: 325.w,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          borderRadius: BorderRadius.circular(15),
                         ),
-                        SizedBox(width: 15.w),
-                        Text(
-                          'Help',
-                          style: TextStyle(
-                            color: Colors.grey.shade800,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 14.sp,
-                            fontFamily: 'SF Pro Rounded',
-                          ),
-                        ),
-                        Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              IconButton(
-                                icon: Icon(Icons.chevron_right_outlined),
-                                onPressed: () {},
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                SizedBox(width: 10.w),
+                                IconButton(
+                                  icon: const Icon(
+                                    Icons.star,
+                                    size: 18,
+                                  ),
+                                  onPressed: () {},
+                                ),
+                                SizedBox(width: 15.w),
+                                Text(
+                                  'Help',
+                                  style: TextStyle(
+                                    color: Colors.grey.shade800,
+                                    fontWeight: FontWeight.normal,
+                                    fontSize: 14.sp,
+                                    fontFamily: 'SF Pro Rounded',
+                                  ),
+                                ),
+                                Expanded(
+                                  child: Row(
+                                    mainAxisAlignment: MainAxisAlignment.end,
+                                    children: [
+                                      IconButton(
+                                        icon: const Icon(
+                                            Icons.chevron_right_outlined),
+                                        onPressed: () {},
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(height: 10.h),
+                            GestureDetector(
+                              onTap: () {
+                                Navigator.pushReplacement(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const FAQs()));
+                              },
+                              child: Row(
+                                children: [
+                                  SizedBox(width: 10.w),
+                                  IconButton(
+                                    icon: const Icon(
+                                      Icons.info,
+                                      size: 18,
+                                    ),
+                                    onPressed: () {},
+                                  ),
+                                  SizedBox(width: 15.w),
+                                  Text(
+                                    'FAQ',
+                                    style: TextStyle(
+                                      color: Colors.grey.shade800,
+                                      fontWeight: FontWeight.normal,
+                                      fontSize: 14.sp,
+                                      fontFamily: 'SF Pro Rounded',
+                                    ),
+                                  ),
+                                  Expanded(
+                                    child: Row(
+                                      mainAxisAlignment: MainAxisAlignment.end,
+                                      children: [
+                                        IconButton(
+                                          icon: const Icon(
+                                              Icons.chevron_right_outlined),
+                                          onPressed: () {},
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                ],
                               ),
-                            ],
-                          ),
+                            ),
+                          ],
                         ),
-                      ],
+                      ),
                     ),
-                    SizedBox(height: 10.h),
-                    Row(
-                      children: [
-                        SizedBox(width: 10.w),
-                        IconButton(
-                          icon: Icon(Icons.info,
-                          size: 18,),
-                          onPressed: () {},
-                        ),
-                        SizedBox(width: 15.w),
-                        Text(
-                          'FAQ',
-                          style: TextStyle(
-                            color: Colors.grey.shade800,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 14.sp,
-                            fontFamily: 'SF Pro Rounded',
-                          ),
-                        ),
-                        Expanded(
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.end,
-                            children: [
-                              IconButton(
-                                icon: Icon(Icons.chevron_right_outlined),
-                                onPressed: () {},
-                              ),
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-                ],
-              ),
-            ),
-          ),
                     SizedBox(height: 40.h),
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 160),
                       child: GestureDetector(
                         onTap: () {
-                          Navigator.pushReplacement(context,
-                              MaterialPageRoute(builder: (context) => Login()));                        },
+                          Navigator.pushReplacement(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const Login()));
+                        },
                         child: Text(
                           'Sign out',
                           style: TextStyle(
@@ -462,7 +507,6 @@ class _AccountState extends State<Account> {
             ],
           ),
         ),
-
       ),
     );
   }

@@ -18,12 +18,18 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
+  final TextEditingController _searchController = TextEditingController();
   bool result = true;
+
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         iconTheme: const IconThemeData(
           color: Colors.white,
@@ -36,153 +42,152 @@ class _HomeState extends State<Home> {
           ),
         ),
         centerTitle: false,
-        title: Container(
-          child: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Row(
-                        children: [
-                          Text(
-                            'Hi, Dimas',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontWeight: FontWeight.normal,
-                              fontStyle: FontStyle.normal,
-                            ),
-                          ),
-                          SizedBox(width: 20.w),
-                          Icon(Icons.waving_hand_rounded, color: Colors.yellow),
-                        ],
-                      ),
-                      SizedBox(height: 10.h),
-                      Text(
-                        'Let\'s start learning!',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.normal,
-                          fontStyle: FontStyle.normal,
-                        ),
-                      ),
-                    ],
-                  ),
-                  SizedBox(width: 100.w),
-                  Row(
-                    children: [
-                      Container(
-                        height: 40.h,
-                        width: 38.w,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFB2B2B2),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: IconButton(
-                          onPressed: () {
-                            showModalBottomSheet(
-                              constraints: BoxConstraints(maxHeight: 678.h),
-                              isScrollControlled: true,
-                              context: context,
-                              elevation: 10,
-                              backgroundColor: Colors.white,
-                              builder: (BuildContext context) {
-                                return SizedBox(
-                                  height: 800.h,
-                                  child: Cart_f(),
-                                );
-                              },
-                            );
-                          },
-                          icon: Icon(
-                            Icons.shopping_cart_rounded,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      Container(
-                        height: 40.h,
-                        width: 38.w,
-                        decoration: BoxDecoration(
-                          color: Color(0xFFB2B2B2),
-                          borderRadius: BorderRadius.circular(15),
-                        ),
-                        child: IconButton(
-                          onPressed: () {
-                            showModalBottomSheet(
-                              constraints: BoxConstraints(maxHeight: 678.h),
-                              isScrollControlled: true,
-                              context: context,
-                              elevation: 10,
-                              backgroundColor: Colors.white,
-                              builder: (BuildContext context) {
-                                return SizedBox(
-                                  height: 800.h,
-                                  child: Not_BottomSheet(),
-                                );
-                              },
-                            );
-                          },
-                          icon: const Icon(
-                            Icons.notifications,
-                            color: Colors.white,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ],
-              ),
-              SizedBox(height: 30.h),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 25),
-                child: ElevatedButton(
-                  onPressed: () {
-                    Navigator.pushReplacement(context,
-                        MaterialPageRoute(builder: (context) => Search()));
-                  },
-                  style: ElevatedButton.styleFrom(
-                    primary: Colors.white,
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                  ),
-                  child: Container(
-                    child: Row(
+        title: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Row(
                       children: [
-                        Padding(
-                          padding: EdgeInsets.all(8.0),
-                          child: Icon(Icons.search, color: Colors.grey),
-                        ),
-                        Expanded(
-                          child: TextField(
-                            style: TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
-                              hintText: 'Search for anything..',
-                              hintStyle: TextStyle(color: Colors.grey),
-                              border: InputBorder.none,
-                            ),
+                        const Text(
+                          'Hi, Dimas',
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.normal,
+                            fontStyle: FontStyle.normal,
                           ),
                         ),
+                        SizedBox(width: 20.w),
+                        const Icon(Icons.waving_hand_rounded,
+                            color: Colors.yellow),
                       ],
                     ),
+                    SizedBox(height: 10.h),
+                    const Text(
+                      'Let\'s start learning!',
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.normal,
+                        fontStyle: FontStyle.normal,
+                      ),
+                    ),
+                  ],
+                ),
+                SizedBox(width: 100.w),
+                Row(
+                  children: [
+                    Container(
+                      height: 40.h,
+                      width: 38.w,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFB2B2B2),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          showModalBottomSheet(
+                            constraints: BoxConstraints(maxHeight: 678.h),
+                            isScrollControlled: true,
+                            context: context,
+                            elevation: 10,
+                            backgroundColor: Colors.white,
+                            builder: (BuildContext context) {
+                              return SizedBox(
+                                height: 800.h,
+                                child: const Cart_f(),
+                              );
+                            },
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.shopping_cart_rounded,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                    SizedBox(width: 10.w),
+                    Container(
+                      height: 40.h,
+                      width: 38.w,
+                      decoration: BoxDecoration(
+                        color: const Color(0xFFB2B2B2),
+                        borderRadius: BorderRadius.circular(15),
+                      ),
+                      child: IconButton(
+                        onPressed: () {
+                          showModalBottomSheet(
+                            constraints: BoxConstraints(maxHeight: 678.h),
+                            isScrollControlled: true,
+                            context: context,
+                            elevation: 10,
+                            backgroundColor: Colors.white,
+                            builder: (BuildContext context) {
+                              return SizedBox(
+                                height: 800.h,
+                                child: const Not_BottomSheet(),
+                              );
+                            },
+                          );
+                        },
+                        icon: const Icon(
+                          Icons.notifications,
+                          color: Colors.white,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+              ],
+            ),
+            SizedBox(height: 30.h),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 25),
+              child: ElevatedButton(
+                onPressed: () {
+                  Navigator.pushReplacement(context,
+                      MaterialPageRoute(builder: (context) => const Search()));
+                },
+                style: ElevatedButton.styleFrom(
+                  primary: Colors.white,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
                   ),
                 ),
+                child: Row(
+                  children: [
+                    const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(Icons.search, color: Colors.grey),
+                    ),
+                    Expanded(
+                      child: TextField(
+                        controller: _searchController,
+                        style: const TextStyle(color: Colors.black),
+                        decoration: const InputDecoration(
+                          hintText: 'Search for anything..',
+                          hintStyle: TextStyle(color: Colors.grey),
+                          border: InputBorder.none,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
               ),
-            ],
-          ),
+            ),
+          ],
         ),
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
@@ -237,7 +242,7 @@ class _HomeState extends State<Home> {
                     ],
                   ),
                   SizedBox(height: 20.h),
-                  CategoryWidget(),
+                  const CategoryWidget(),
                 ],
               ),
             ),

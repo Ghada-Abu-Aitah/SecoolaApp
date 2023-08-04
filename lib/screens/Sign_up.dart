@@ -35,18 +35,15 @@ class _Sign_upState extends State<Sign_up> with SingleTickerProviderStateMixin {
 
   validator() {
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
-      print('validated');
-      Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Login()));
-    } else {
-      print('Not Validated');
-    }
+      Navigator.pushReplacement(context,
+          MaterialPageRoute(builder: (context) => const Bottom_Navigation()));
+    } else {}
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
+      backgroundColor: const Color(0xFFFAFAFA),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -181,14 +178,14 @@ class _Sign_upState extends State<Sign_up> with SingleTickerProviderStateMixin {
                       decoration: InputDecoration(
                         labelText: "Your Email",
                         hintText: '',
-                        prefixIcon: Icon(Icons.email_rounded),
-                        prefixIconColor: Color(0xFF00A9B7),
+                        prefixIcon: const Icon(Icons.email_rounded),
+                        prefixIconColor: const Color(0xFF00A9B7),
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(
+                        contentPadding: const EdgeInsets.symmetric(
                             horizontal: 16, vertical: 12),
                         focusedBorder: OutlineInputBorder(
                           borderSide: BorderSide(
-                            color: Color(0xFF00A9B7),
+                            color: const Color(0xFF00A9B7),
                             width: 1.w,
                           ),
                           borderRadius: BorderRadius.circular(15),
@@ -220,14 +217,14 @@ class _Sign_upState extends State<Sign_up> with SingleTickerProviderStateMixin {
                         obscureText: _obscurePassword,
                         decoration: InputDecoration(
                           labelText: "Your Password",
-                          prefixIcon: Icon(Icons.lock),
-                          prefixIconColor: Color(0xFF00A9B7),
+                          prefixIcon: const Icon(Icons.lock),
+                          prefixIconColor: const Color(0xFF00A9B7),
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(
+                          contentPadding: const EdgeInsets.symmetric(
                               horizontal: 16.0, vertical: 12.0),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color(0xFF00A9B7),
+                              color: const Color(0xFF00A9B7),
                               width: 1.w,
                             ),
                             borderRadius: BorderRadius.circular(15),
@@ -252,8 +249,9 @@ class _Sign_upState extends State<Sign_up> with SingleTickerProviderStateMixin {
                           }
                           if (value.trim().length < 6) {
                             return "password should not be less than 6 characters";
-                          } else
+                          } else {
                             return null;
+                          }
                         }),
                   ),
                   SizedBox(height: 35.h),
@@ -269,7 +267,7 @@ class _Sign_upState extends State<Sign_up> with SingleTickerProviderStateMixin {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Color(0xFF00A9B7),
+                            primary: const Color(0xFF00A9B7),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -286,7 +284,7 @@ class _Sign_upState extends State<Sign_up> with SingleTickerProviderStateMixin {
                         ),
                         SizedBox(height: 25.h),
                         Text(
-                          'By contuning, you agree to our Terms &',
+                          'By continuing, you agree to our Terms &',
                           style: TextStyle(
                             fontSize: 14.sp,
                             color: Colors.grey,
@@ -305,7 +303,7 @@ class _Sign_upState extends State<Sign_up> with SingleTickerProviderStateMixin {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Bottom_Navigation()));
+                                    builder: (context) => const Login()));
                           },
                           child: Text(
                             'I already have an account',

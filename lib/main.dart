@@ -8,7 +8,6 @@ import 'package:secoola/screens/Home.dart';
 import 'package:secoola/screens/Secoola.dart';
 import 'package:secoola/screens/Topic.dart';
 
-
 void main() {
   runApp(const MyApp());
 }
@@ -19,15 +18,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ScreenUtilInit(
-      designSize: Size(375, 812),
-    minTextAdapt : true,
-    splitScreenMode:true,
-    builder:(context,child)  => MaterialApp(
+      designSize: const Size(375, 812),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context, child) => const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Secoola(),
-
-        ),
-
+        home: Bottom_Navigation(),
+      ),
     );
   }
 }

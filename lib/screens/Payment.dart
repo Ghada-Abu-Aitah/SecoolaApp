@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/screens/Bottom_Navigation.dart';
-import 'package:secoola/screens/Course_c.dart';
 import 'package:secoola/screens/Pay_Success.dart';
-
 
 class Payment extends StatefulWidget {
   const Payment({super.key});
@@ -18,10 +16,10 @@ class _PaymentState extends State<Payment> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Payment',
           style: TextStyle(
             color: Colors.black,
@@ -29,13 +27,13 @@ class _PaymentState extends State<Payment> {
             fontStyle: FontStyle.normal,
           ),
         ),
-        backgroundColor: Color(0xFFFAFAFA),
+        backgroundColor: const Color(0xFFFAFAFA),
         elevation: 0,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white,
         ),
         leading: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 15),
+          padding: const EdgeInsets.symmetric(horizontal: 15),
           child: Container(
             height: 50.h,
             width: 50.w,
@@ -49,7 +47,9 @@ class _PaymentState extends State<Payment> {
               ),
               onPressed: () {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Bottom_Navigation()));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Bottom_Navigation()));
               },
             ),
           ),
@@ -117,7 +117,7 @@ class _PaymentState extends State<Payment> {
                                   SizedBox(height: 5.h),
                                   Row(
                                     children: [
-                                      Icon(
+                                      const Icon(
                                         Icons.person,
                                         color: Colors.grey,
                                         size: 18,
@@ -275,11 +275,8 @@ class _PaymentState extends State<Payment> {
                 ),
               ),
             ),
-
           ],
-
         ),
-
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(
@@ -289,7 +286,7 @@ class _PaymentState extends State<Payment> {
               color: Colors.grey.shade200.withOpacity(0.50),
               spreadRadius: 15,
               blurRadius: 5,
-              offset: Offset(0, 10),
+              offset: const Offset(0, 10),
             ),
           ],
         ),
@@ -318,7 +315,6 @@ class _PaymentState extends State<Payment> {
                       // Button widget
                       ElevatedButton(
                         onPressed: () {},
-                        child: Text('VEKTORABELAJAR   :'),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.blue.shade50, //
                           onPrimary: Colors.blue,
@@ -326,6 +322,7 @@ class _PaymentState extends State<Payment> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
+                        child: const Text('VEKTORABELAJAR   :'),
                       ),
                     ],
                   ),
@@ -369,21 +366,21 @@ class _PaymentState extends State<Payment> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Pay_Success()));
+                                  builder: (context) => const Pay_Success()));
                         },
-                        child: Text(
-                          'Checkout',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                          ),
-                        ),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFF00A9B7), //
+                          primary: const Color(0xFF00A9B7), //
                           onPrimary: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
                           minimumSize: Size(157.w, 52.h),
+                        ),
+                        child: Text(
+                          'Checkout',
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                          ),
                         ),
                       ),
                     ],

@@ -16,10 +16,10 @@ class _VerifyState extends State<Verify> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Verify',
           style: TextStyle(
             color: Colors.black,
@@ -27,9 +27,9 @@ class _VerifyState extends State<Verify> {
             fontStyle: FontStyle.normal,
           ),
         ),
-        backgroundColor:Color(0xFFFAFAFA),
+        backgroundColor: const Color(0xFFFAFAFA),
         elevation: 0,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white,
         ),
         leading: IconButton(
@@ -41,7 +41,8 @@ class _VerifyState extends State<Verify> {
           onPressed: () {
             if (result ?? true) {
               Navigator.pushReplacement(context,
-                  MaterialPageRoute(builder: (context) => Reset()));            }
+                  MaterialPageRoute(builder: (context) => const Reset()));
+            }
           },
         ),
       ),
@@ -64,9 +65,7 @@ class _VerifyState extends State<Verify> {
                     ),
                   ),
                   SizedBox(width: 20.w),
-                  Icon(
-                      Icons.mobile_friendly,
-                      color: Colors.blue),
+                  const Icon(Icons.mobile_friendly, color: Colors.blue),
                 ],
               ),
             ),
@@ -74,7 +73,7 @@ class _VerifyState extends State<Verify> {
               height: 20.h,
             ),
             Padding(
-              padding: const EdgeInsets.symmetric( horizontal: 20),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'Check your inbox, we have send the Varification code to your email.',
                 textAlign: TextAlign.center,
@@ -85,13 +84,12 @@ class _VerifyState extends State<Verify> {
                 ),
               ),
             ),
-             SizedBox(height: 40.h),
+            SizedBox(height: 40.h),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Row(
                 children: [
                   Container(
-
                     width: 69.w,
                     height: 52.h,
                     decoration: BoxDecoration(
@@ -99,7 +97,7 @@ class _VerifyState extends State<Verify> {
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: Colors.blue),
                     ),
-                    child: TextField(
+                    child: const TextField(
                       maxLength: 1,
                       textAlign: TextAlign.center,
                       decoration: InputDecoration(
@@ -115,11 +113,10 @@ class _VerifyState extends State<Verify> {
                     height: 52.h,
                     decoration: BoxDecoration(
                       color: Colors.white,
-
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: Colors.blue),
                     ),
-                    child: TextField(
+                    child: const TextField(
                       maxLength: 1,
                       textAlign: TextAlign.center,
                       decoration: InputDecoration(
@@ -135,11 +132,10 @@ class _VerifyState extends State<Verify> {
                     height: 52.h,
                     decoration: BoxDecoration(
                       color: Colors.white,
-
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: Colors.blue),
                     ),
-                    child: TextField(
+                    child: const TextField(
                       maxLength: 1,
                       textAlign: TextAlign.center,
                       decoration: InputDecoration(
@@ -155,11 +151,10 @@ class _VerifyState extends State<Verify> {
                     height: 52.h,
                     decoration: BoxDecoration(
                       color: Colors.white,
-
                       borderRadius: BorderRadius.circular(20),
                       border: Border.all(color: Colors.blue),
                     ),
-                    child: TextField(
+                    child: const TextField(
                       maxLength: 1,
                       textAlign: TextAlign.center,
                       decoration: InputDecoration(
@@ -181,11 +176,14 @@ class _VerifyState extends State<Verify> {
                   ElevatedButton(
                     onPressed: () {
                       if (result ?? true) {
-                        Navigator.pushReplacement(context,
-                            MaterialPageRoute(builder: (context) => Set_pass()));                      }
+                        Navigator.pushReplacement(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => const Set_pass()));
+                      }
                     },
                     style: ElevatedButton.styleFrom(
-                      primary: Color(0xFF00A9B7),
+                      primary: const Color(0xFF00A9B7),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(20),
                       ),
@@ -205,9 +203,10 @@ class _VerifyState extends State<Verify> {
                     alignment: Alignment.center,
                     child: Row(
                       children: [
-                        SizedBox(width: 30.w,),
+                        SizedBox(
+                          width: 30.w,
+                        ),
                         Text(
-
                           'Not retrieve any code? ',
                           style: TextStyle(
                             fontSize: 14.sp,

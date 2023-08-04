@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:secoola/screens/Onbo1.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class Secoola extends StatefulWidget {
   const Secoola({Key? key}) : super(key: key);
 
@@ -15,10 +16,10 @@ class _SecoolaState extends State<Secoola> {
   }
 
   _navigatetohome(BuildContext context) async {
-    await Future.delayed(Duration(milliseconds: 2000));
+    await Future.delayed(const Duration(milliseconds: 2000));
     Navigator.pushReplacement(
       context,
-      MaterialPageRoute(builder: (context) => Onbo1()),
+      MaterialPageRoute(builder: (context) => const Onbo1()),
     );
   }
 
@@ -26,7 +27,7 @@ class _SecoolaState extends State<Secoola> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           gradient: LinearGradient(
             begin: AlignmentDirectional.topStart,
             end: AlignmentDirectional.bottomEnd,

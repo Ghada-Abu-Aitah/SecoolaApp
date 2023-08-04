@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:secoola/screens/Bottom_Navigation.dart';
 import 'package:secoola/screens/S_result.dart';
 
 class Search extends StatefulWidget {
@@ -10,23 +11,43 @@ class Search extends StatefulWidget {
 }
 
 class _SearchState extends State<Search> {
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
-        backgroundColor: Color(0xFFFAFAFA),
+        leading: IconButton(
+          icon: const Icon(
+            Icons.arrow_back_ios,
+            color: Colors.black,
+            size: 22,
+          ),
+          onPressed: () {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const Bottom_Navigation()));
+          },
+        ),
+        backgroundColor: const Color(0xFFFAFAFA),
         elevation: 0,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white,
         ),
-        toolbarHeight: 100.h,
-        centerTitle: false,
+        toolbarHeight: 80.h,
         title: Column(
           children: [
-            SizedBox(height: 30.h),
+            SizedBox(height: 5.h),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
+              padding: const EdgeInsets.symmetric(horizontal: 0),
               child: SingleChildScrollView(
                 child: Container(
                   decoration: BoxDecoration(
@@ -35,17 +56,18 @@ class _SearchState extends State<Search> {
                   ),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: const Icon(
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(
                           Icons.search,
                           color: Colors.black87,
                         ),
                       ),
                       Expanded(
                         child: TextField(
-                          style: TextStyle(color: Colors.white),
-                          decoration: InputDecoration(
+                          controller: _searchController,
+                          style: const TextStyle(color: Colors.black),
+                          decoration: const InputDecoration(
                             hintText: 'Search for anything..',
                             hintStyle: TextStyle(color: Colors.grey),
                             border: InputBorder.none,
@@ -53,7 +75,7 @@ class _SearchState extends State<Search> {
                         ),
                       ),
                       SizedBox(height: 50.h),
-                      Icon(Icons.mic, color: Colors.black),
+                      const Icon(Icons.mic, color: Colors.black),
                     ],
                   ),
                 ),
@@ -198,8 +220,11 @@ class _SearchState extends State<Search> {
                   SizedBox(width: 5.w),
                   InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => S_result()));                    },
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const S_result()));
+                    },
                     child: Container(
                       height: 38.h,
                       width: 98.w,
@@ -241,7 +266,7 @@ class _SearchState extends State<Search> {
               children: [
                 SizedBox(width: 10.w),
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.broken_image_outlined,
                     color: Colors.pink,
                   ),
@@ -262,7 +287,7 @@ class _SearchState extends State<Search> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.chevron_right_outlined),
+                        icon: const Icon(Icons.chevron_right_outlined),
                         onPressed: () {},
                       ),
                     ],
@@ -275,7 +300,7 @@ class _SearchState extends State<Search> {
               children: [
                 SizedBox(width: 10.w),
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.computer,
                     color: Colors.blue,
                   ),
@@ -296,7 +321,7 @@ class _SearchState extends State<Search> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.chevron_right_outlined),
+                        icon: const Icon(Icons.chevron_right_outlined),
                         onPressed: () {},
                       ),
                     ],
@@ -309,7 +334,7 @@ class _SearchState extends State<Search> {
               children: [
                 SizedBox(width: 10.w),
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.design_services,
                     color: Colors.brown,
                   ),
@@ -330,7 +355,7 @@ class _SearchState extends State<Search> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.chevron_right_outlined),
+                        icon: const Icon(Icons.chevron_right_outlined),
                         onPressed: () {},
                       ),
                     ],
@@ -343,7 +368,7 @@ class _SearchState extends State<Search> {
               children: [
                 SizedBox(width: 10.w),
                 IconButton(
-                  icon: Icon(Icons.mobile_friendly),
+                  icon: const Icon(Icons.mobile_friendly),
                   onPressed: () {},
                 ),
                 SizedBox(width: 15.w),
@@ -361,7 +386,7 @@ class _SearchState extends State<Search> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.chevron_right_outlined),
+                        icon: const Icon(Icons.chevron_right_outlined),
                         onPressed: () {},
                       ),
                     ],
@@ -374,7 +399,7 @@ class _SearchState extends State<Search> {
               children: [
                 SizedBox(width: 10.w),
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.style_outlined,
                     color: Colors.green,
                   ),
@@ -395,7 +420,7 @@ class _SearchState extends State<Search> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.chevron_right_outlined),
+                        icon: const Icon(Icons.chevron_right_outlined),
                         onPressed: () {},
                       ),
                     ],
@@ -408,7 +433,7 @@ class _SearchState extends State<Search> {
               children: [
                 SizedBox(width: 10.w),
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.health_and_safety,
                     color: Colors.blue,
                   ),
@@ -429,7 +454,7 @@ class _SearchState extends State<Search> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.chevron_right_outlined),
+                        icon: const Icon(Icons.chevron_right_outlined),
                         onPressed: () {},
                       ),
                     ],
@@ -442,7 +467,7 @@ class _SearchState extends State<Search> {
               children: [
                 SizedBox(width: 10.w),
                 IconButton(
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.business_center,
                     color: Colors.brown,
                   ),
@@ -463,7 +488,7 @@ class _SearchState extends State<Search> {
                     mainAxisAlignment: MainAxisAlignment.end,
                     children: [
                       IconButton(
-                        icon: Icon(Icons.chevron_right_outlined),
+                        icon: const Icon(Icons.chevron_right_outlined),
                         onPressed: () {},
                       ),
                     ],

@@ -29,21 +29,18 @@ class _ResetState extends State<Reset> {
 
   validator() {
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
-      print('validated');
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Verify()));
-    } else {
-      print('Not Validated');
-    }
+          context, MaterialPageRoute(builder: (context) => const Verify()));
+    } else {}
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         centerTitle: true,
-        title: Text(
+        title: const Text(
           'Reset password',
           style: TextStyle(
             color: Colors.black,
@@ -51,9 +48,9 @@ class _ResetState extends State<Reset> {
             fontStyle: FontStyle.normal,
           ),
         ),
-        backgroundColor: Color(0xFFFAFAFA),
+        backgroundColor: const Color(0xFFFAFAFA),
         elevation: 0,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white,
         ),
         leading: IconButton(
@@ -66,7 +63,7 @@ class _ResetState extends State<Reset> {
             Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => Login(),
+                builder: (context) => const Login(),
               ),
             );
           },
@@ -91,7 +88,7 @@ class _ResetState extends State<Reset> {
                     ),
                   ),
                   SizedBox(width: 20.w),
-                  Icon(Icons.lock_rounded, color: Colors.orange),
+                  const Icon(Icons.lock_rounded, color: Colors.orange),
                 ],
               ),
             ),
@@ -129,13 +126,13 @@ class _ResetState extends State<Reset> {
                         decoration: InputDecoration(
                           labelText: "Your Email",
                           hintText: '',
-                          prefixIcon: Icon(Icons.email_rounded),
-                          prefixIconColor: Color(0xFF00A9B7),
+                          prefixIcon: const Icon(Icons.email_rounded),
+                          prefixIconColor: const Color(0xFF00A9B7),
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(
+                          contentPadding: const EdgeInsets.symmetric(
                               horizontal: 16.0, vertical: 12.0),
                           focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
+                            borderSide: const BorderSide(
                               color: Color(0xFF00A9B7),
                               width: 1.0,
                             ),
@@ -150,8 +147,9 @@ class _ResetState extends State<Reset> {
                                   r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
                               .hasMatch(value)) {
                             return "Invalid Email Address";
-                          } else
+                          } else {
                             return null;
+                          }
                         },
                       ),
                     ),
@@ -168,7 +166,7 @@ class _ResetState extends State<Reset> {
                               });
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: Color(0xFF00A9B7),
+                              primary: const Color(0xFF00A9B7),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),

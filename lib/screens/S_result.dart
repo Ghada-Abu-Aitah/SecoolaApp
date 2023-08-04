@@ -11,16 +11,24 @@ class S_result extends StatefulWidget {
 }
 
 class _S_resultState extends State<S_result> {
+  final TextEditingController _searchController = TextEditingController();
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
   bool result = true;
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
+      backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
-        backgroundColor: Color(0xFFFAFAFA),
+        backgroundColor: const Color(0xFFFAFAFA),
         elevation: 0,
-        iconTheme: IconThemeData(
+        iconTheme: const IconThemeData(
           color: Colors.white,
         ),
         toolbarHeight: 100.h,
@@ -38,17 +46,18 @@ class _S_resultState extends State<S_result> {
                   ),
                   child: Row(
                     children: [
-                      Padding(
-                        padding: const EdgeInsets.all(8.0),
-                        child: const Icon(
+                      const Padding(
+                        padding: EdgeInsets.all(8.0),
+                        child: Icon(
                           Icons.search,
                           color: Colors.black87,
                         ),
                       ),
                       Expanded(
                         child: TextField(
-                          style: TextStyle(color: Colors.white),
-                          decoration: InputDecoration(
+                          controller: _searchController,
+                          style: const TextStyle(color: Colors.black),
+                          decoration: const InputDecoration(
                             hintText: 'UX Design',
                             hintStyle: TextStyle(color: Colors.grey),
                             border: InputBorder.none,
@@ -61,9 +70,9 @@ class _S_resultState extends State<S_result> {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Search()));
+                                    builder: (context) => const Search()));
                           },
-                          icon: Icon(Icons.cancel, color: Colors.grey)),
+                          icon: const Icon(Icons.cancel, color: Colors.grey)),
                     ],
                   ),
                 ),
@@ -107,7 +116,7 @@ class _S_resultState extends State<S_result> {
                     ),
                     child: Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.compare_arrows,
                           color: Colors.blue,
                         ),
@@ -136,7 +145,7 @@ class _S_resultState extends State<S_result> {
                     ),
                     child: Row(
                       children: [
-                        Icon(
+                        const Icon(
                           Icons.south_outlined,
                           color: Colors.blue,
                         ),

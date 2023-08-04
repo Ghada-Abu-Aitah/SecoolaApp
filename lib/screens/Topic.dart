@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/screens/Bottom_Navigation.dart';
 import 'package:secoola/screens/Home.dart';
+
 class Topic extends StatefulWidget {
   const Topic({Key? key}) : super(key: key);
 
@@ -47,7 +48,7 @@ class _TopicState extends State<Topic> {
                   right: -4.w,
                   child: Icon(
                     Icons.check_circle_rounded,
-                    color: Color(0xFF00A9B7),
+                    color: const Color(0xFF00A9B7),
                     size: 25.sp,
                   ),
                 ),
@@ -65,6 +66,7 @@ class _TopicState extends State<Topic> {
       ),
     );
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -74,7 +76,7 @@ class _TopicState extends State<Topic> {
           children: [
             SizedBox(height: 110.h),
             Padding(
-              padding: EdgeInsets.symmetric(horizontal: 35, vertical: 10),
+              padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 10),
               child: Text(
                 'Pick your favorite topic',
                 style: TextStyle(
@@ -89,7 +91,7 @@ class _TopicState extends State<Topic> {
               height: 10.h,
             ),
             Padding(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 50),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
               child: Text(
                 'Choose your favorite topic to help us deliver\n the most suitable course for you',
                 textAlign: TextAlign.center,
@@ -162,10 +164,12 @@ class _TopicState extends State<Topic> {
             ElevatedButton(
               onPressed: () {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Bottom_Navigation()));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Bottom_Navigation()));
               },
               style: ElevatedButton.styleFrom(
-                primary: Color(0xFF00A9B7),
+                primary: const Color(0xFF00A9B7),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(20),
                 ),

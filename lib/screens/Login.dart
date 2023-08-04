@@ -41,7 +41,7 @@ class _LoginState extends State<Login> {
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
       print('validated');
       Navigator.pushReplacement(
-          context, MaterialPageRoute(builder: (context) => Topic()));
+          context, MaterialPageRoute(builder: (context) => const Topic()));
     } else {
       print('Not Validated');
     }
@@ -50,7 +50,7 @@ class _LoginState extends State<Login> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(0xFFFAFAFA),
+      backgroundColor: const Color(0xFFFAFAFA),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -70,7 +70,7 @@ class _LoginState extends State<Login> {
                     ),
                   ),
                   SizedBox(width: 20.w),
-                  Icon(Icons.waving_hand_rounded, color: Colors.yellow),
+                  const Icon(Icons.waving_hand_rounded, color: Colors.yellow),
                 ],
               ),
             ),
@@ -190,13 +190,13 @@ class _LoginState extends State<Login> {
                       controller: _emailTextController,
                       decoration: InputDecoration(
                         labelText: "Your Email",
-                        prefixIcon: Icon(Icons.email_rounded),
-                        prefixIconColor: Color(0xFF00A9B7),
+                        prefixIcon: const Icon(Icons.email_rounded),
+                        prefixIconColor: const Color(0xFF00A9B7),
                         border: InputBorder.none,
-                        contentPadding: EdgeInsets.symmetric(
+                        contentPadding: const EdgeInsets.symmetric(
                             horizontal: 16.0, vertical: 12.0),
                         focusedBorder: OutlineInputBorder(
-                          borderSide: BorderSide(
+                          borderSide: const BorderSide(
                             color: Color(0xFF00A9B7),
                             width: 1.0,
                           ),
@@ -229,14 +229,14 @@ class _LoginState extends State<Login> {
                         obscureText: _obscurePassword,
                         decoration: InputDecoration(
                           labelText: "Your Password",
-                          prefixIcon: Icon(Icons.lock),
-                          prefixIconColor: Color(0xFF00A9B7),
+                          prefixIcon: const Icon(Icons.lock),
+                          prefixIconColor: const Color(0xFF00A9B7),
                           border: InputBorder.none,
-                          contentPadding: EdgeInsets.symmetric(
+                          contentPadding: const EdgeInsets.symmetric(
                               horizontal: 16.0, vertical: 12.0),
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
-                              color: Color(0xFF00A9B7),
+                              color: const Color(0xFF00A9B7),
                               width: 1.w,
                             ),
                             borderRadius: BorderRadius.circular(15),
@@ -281,10 +281,10 @@ class _LoginState extends State<Login> {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Reset()));
+                                    builder: (context) => const Reset()));
                           }
                         },
-                        child: Text(
+                        child: const Text(
                           'Forgot password?',
                           style: TextStyle(
                             color: Colors.grey,
@@ -306,7 +306,7 @@ class _LoginState extends State<Login> {
                             });
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Color(0xFF00A9B7),
+                            primary: const Color(0xFF00A9B7),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
@@ -327,7 +327,7 @@ class _LoginState extends State<Login> {
                             Navigator.pushReplacement(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => Sign_up()));
+                                    builder: (context) => const Sign_up()));
                           },
                           child: Text(
                             'I don`t have an account yet',

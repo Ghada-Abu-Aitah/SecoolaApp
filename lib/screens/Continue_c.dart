@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/screens/Bottom_Navigation.dart';
-import 'package:secoola/screens/Home.dart';
 import 'package:secoola/widgets/ContinueWidget.dart';
-import 'package:secoola/widgets/TabWidget.dart';
 
 class Continue_c extends StatefulWidget {
   const Continue_c({super.key});
@@ -40,7 +38,7 @@ class _Continue_cState extends State<Continue_c> {
               ),
               onPressed: () {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Bottom_Navigation()));
+                    context, MaterialPageRoute(builder: (context) => const Bottom_Navigation()));
               },
             ),
           ),
@@ -58,7 +56,7 @@ class _Continue_cState extends State<Continue_c> {
               child: Center(
                 child: IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.shopping_cart_rounded,
                     color: Colors.white,
                   ),
@@ -106,7 +104,7 @@ class _Continue_cState extends State<Continue_c> {
                         Row(
                           mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.person,
                               color: Color(0xFF00A9B7),
                             ),
@@ -114,14 +112,14 @@ class _Continue_cState extends State<Continue_c> {
                             Text(
                               'Halo Academy',
                               style: TextStyle(
-                                color: Color(0xFF00A9B7),
+                                color: const Color(0xFF00A9B7),
                                 fontWeight: FontWeight.normal,
                                 fontSize: 16.sp,
                                 fontFamily: 'SF Pro Rounded',
                               ),
                             ),
                             SizedBox(width: 50.w),
-                            Icon(
+                            const Icon(
                               Icons.star,
                               color: Colors.yellow,
                             ),
@@ -291,7 +289,7 @@ class _Continue_cState extends State<Continue_c> {
                     boxShadow: [
                       BoxShadow(
                         color: Colors.grey.withOpacity(0.5),
-                        offset: Offset(0, 1),
+                        offset: const Offset(0, 1),
                       ),
                     ],
                   ),
@@ -326,8 +324,8 @@ class _Continue_cState extends State<Continue_c> {
                           ),
                         ),
                       ),
-                      Padding(
-                        padding: const EdgeInsets.symmetric(
+                      const Padding(
+                        padding: EdgeInsets.symmetric(
                             horizontal: 15, vertical: 15),
                         child: Icon(
                           Icons.done,
@@ -340,7 +338,7 @@ class _Continue_cState extends State<Continue_c> {
                 ),
               ),
             ),
-            SizedBox(height: 20),
+            const SizedBox(height: 20),
             Continue(),
             SizedBox(height: 20.h),
             Continue(),

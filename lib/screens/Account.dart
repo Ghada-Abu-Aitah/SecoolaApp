@@ -47,6 +47,8 @@ class _AccountState extends State<Account> {
           ),
         ),
         body: SingleChildScrollView(
+          physics: const BouncingScrollPhysics(),
+
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

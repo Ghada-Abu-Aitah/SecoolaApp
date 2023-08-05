@@ -82,6 +82,7 @@ class _S_resultState extends State<S_result> {
         ),
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -165,12 +166,9 @@ class _S_resultState extends State<S_result> {
               ),
             ),
             SizedBox(height: 20.h),
-            SingleChildScrollView(
-              child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-                child: CoursesWidget(),
-              ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: CoursesWidget(),
             ),
           ],
         ),

@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:secoola/models/CurrTap.dart';
-import 'package:secoola/models/RevTab.dart';
-import 'package:secoola/screens/Course_c.dart';
 
-class ButtonWidget extends StatefulWidget {
-  const ButtonWidget({Key? key}) : super(key: key);
+class ConWidget extends StatefulWidget {
+  const ConWidget({super.key});
 
   @override
-  _ButtonWidgetState createState() => _ButtonWidgetState();
+  State<ConWidget> createState() => _ConWidgetState();
 }
 
-class _ButtonWidgetState extends State<ButtonWidget> {
+class _ConWidgetState extends State<ConWidget> {
   List<String> items = [
     "Curriculum",
     "Review",
@@ -56,7 +53,8 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                         child: Text(
                           items[index],
                           style: TextStyle(
-                            color: current == index ? Colors.white : Colors.black,
+                            color:
+                                current == index ? Colors.white : Colors.black,
                             fontSize: 16.sp,
                             fontWeight: FontWeight.normal,
                             fontFamily: 'SF Pro Rounded',
@@ -69,15 +67,9 @@ class _ButtonWidgetState extends State<ButtonWidget> {
             ),
           ),
           SizedBox(height: 20.h),
-          if (current == 0) ...[
-            CurrTap(),
-
-          ] else ...[
-            RevTab(),
-          ],
+          if (current == 0) ...[] else ...[],
         ],
       ),
     );
   }
 }
-

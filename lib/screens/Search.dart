@@ -24,6 +24,7 @@ class _SearchState extends State<Search> {
     return Scaffold(
       backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
+
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back_ios,
@@ -261,6 +262,7 @@ class _SearchState extends State<Search> {
                 ),
               ),
             ),
+
             SizedBox(height: 35.h),
             Row(
               children: [
@@ -496,6 +498,7 @@ class _SearchState extends State<Search> {
                 ),
               ],
             ),
+
           ],
         ),
       ),

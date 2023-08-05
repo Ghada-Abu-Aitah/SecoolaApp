@@ -18,15 +18,16 @@ class RevTab extends StatelessWidget {
         ),
         SizedBox(height: 16.h),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 100),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
+          child : Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(Icons.star, color: Colors.yellow),
-              Icon(Icons.star, color: Colors.yellow),
-              Icon(Icons.star, color: Colors.yellow),
-              Icon(Icons.star, color: Colors.yellow),
-              Icon(Icons.star, color: Colors.yellow),
+              const Icon(Icons.star, color: Colors.yellow),
+              const Icon(Icons.star, color: Colors.yellow),
+              const Icon(Icons.star, color: Colors.yellow),
+              const Icon(Icons.star, color: Colors.yellow),
+              const Icon(Icons.star, color: Colors.yellow),
               SizedBox(width: 8.w),
               Text(
                 '4.8 out of 5',
@@ -39,9 +40,11 @@ class RevTab extends StatelessWidget {
             ],
           ),
         ),
+        ),
+
         SizedBox(height: 30.h),
         Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 30),
+          padding: const EdgeInsets.symmetric(horizontal: 10),
           child: Row(
             children: [
               Text(
@@ -53,7 +56,7 @@ class RevTab extends StatelessWidget {
                 ),
               ),
               SizedBox(width: 5.w),
-              Icon(Icons.arrow_drop_down_sharp),
+              const Icon(Icons.arrow_drop_down_sharp),
             ],
           ),
         ),
@@ -70,7 +73,7 @@ class RevTab extends StatelessWidget {
                       children: [
                         Row(
                           children: [
-                            SizedBox(width: 40.w),
+                            SizedBox(width: 10.w),
                             Container(
                               width: 36.w,
                               height: 36.h,
@@ -104,9 +107,8 @@ class RevTab extends StatelessWidget {
                                 ),
                               ],
                             ),
-                            SizedBox(width: 80.w),
-                            Icon(Icons.star, color: Colors.yellow),
-                            SizedBox(width: 5.w),
+                            SizedBox(width: 60.w),
+                            const Icon(Icons.star, color: Colors.yellow),
                             Text(
                               '4.8',
                               style: TextStyle(
@@ -126,7 +128,7 @@ class RevTab extends StatelessWidget {
             ),
             SizedBox(height: 10.h),
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
                 'Description this is a simple description that explains the description about the class',
                 style: TextStyle(

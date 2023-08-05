@@ -86,6 +86,8 @@ class _WishlistState extends State<Wishlist> {
         ),
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: CoursesWidget(),

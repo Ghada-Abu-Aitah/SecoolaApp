@@ -56,6 +56,7 @@ class My_courseState extends State<My_course> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 25),
               child: SingleChildScrollView(
+                physics: const BouncingScrollPhysics(),
                 child: Container(
                   width: 335.w,
                   height: 48.h,
@@ -89,6 +90,7 @@ class My_courseState extends State<My_course> {
         ),
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 15),
           child: Column(

@@ -4,6 +4,7 @@ import 'package:secoola/screens/Bottom_Navigation.dart';
 import 'package:secoola/screens/Home.dart';
 import 'package:secoola/screens/Payment.dart';
 import 'package:secoola/screens/Wishlist.dart';
+import 'package:secoola/widgets/DesignWidget.dart';
 import 'package:secoola/widgets/TabWidget.dart';
 
 class Course_c extends StatefulWidget {
@@ -39,7 +40,9 @@ class _Course_cState extends State<Course_c> {
               ),
               onPressed: () {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => Bottom_Navigation()));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => Bottom_Navigation()));
               },
             ),
           ),
@@ -68,6 +71,8 @@ class _Course_cState extends State<Course_c> {
         ],
       ),
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
+
         child: Column(
           children: [
             Container(
@@ -78,6 +83,8 @@ class _Course_cState extends State<Course_c> {
                   color: Colors.yellow.shade100),
             ),
             SingleChildScrollView(
+              physics: const BouncingScrollPhysics(),
+
               child: Container(
                 height: 400.h,
                 width: 410.w,
@@ -88,195 +95,22 @@ class _Course_cState extends State<Course_c> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(height: 20.h),
-                        Text(
-                          'Design Thinking Fundamental',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 20.sp,
-                            fontFamily: 'SF Pro Rounded',
-                          ),
-                        ),
-                        SizedBox(height: 15.h),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Icon(
-                              Icons.person,
-                              color: Color(0xFF00A9B7),
-                            ),
-                            SizedBox(width: 10.w),
-                            Text(
-                              'Halo Academy',
-                              style: TextStyle(
-                                color: Color(0xFF00A9B7),
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
-                            ),
-                            SizedBox(width: 50.w),
-                            Icon(
-                              Icons.star,
-                              color: Colors.yellow,
-                            ),
-                            SizedBox(width: 15.w),
-                            Text(
-                              '4.8',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 16.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 25.h),
-                        Text(
-                          'Design thinking is a non-linear, iterative process that\nteamsuse to understand users,redefine problems and create innovative solutions to prototype.',
-                          style: TextStyle(
-                            color: Colors.grey,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 14.sp,
-                            fontFamily: 'SF Pro Rounded',
-                            height: 1.3.h,
-                          ),
-                        ),
-                        SizedBox(height: 25.h),
-                        Row(
-                          children: [
-                            Column(
-                              children: [
-                                Text(
-                                  'Students',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 14.sp,
-                                    fontFamily: 'SF Pro Rounded',
-                                  ),
-                                ),
-                                SizedBox(height: 5.h),
-                                Text(
-                                  '143.247',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 16.sp,
-                                    fontFamily: 'SF Pro Rounded',
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(width: 140.w),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Language',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 14.sp,
-                                    fontFamily: 'SF Pro Rounded',
-                                  ),
-                                ),
-                                SizedBox(height: 5.h),
-                                Text(
-                                  'English',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 16.sp,
-                                    fontFamily: 'SF Pro Rounded',
-                                  ),
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 25.h),
-                        Row(
-                          children: [
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Last update',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 14.sp,
-                                    fontFamily: 'SF Pro Rounded',
-                                  ),
-                                ),
-                                SizedBox(height: 5.h),
-                                Text(
-                                  'Feb 2,2021',
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 16.sp,
-                                    fontFamily: 'SF Pro Rounded',
-                                  ),
-                                ),
-                              ],
-                            ),
-                            SizedBox(width: 120.w),
-                            Column(
-                              crossAxisAlignment: CrossAxisAlignment.start,
-                              children: [
-                                Text(
-                                  'Subtitle',
-                                  style: TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.normal,
-                                    fontSize: 14.sp,
-                                    fontFamily: 'SF Pro Rounded',
-                                  ),
-                                ),
-                                SizedBox(height: 5.h),
-                                Row(
-                                  children: [
-                                    Text(
-                                      'English and',
-                                      style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 16.sp,
-                                        fontFamily: 'SF Pro Rounded',
-                                      ),
-                                    ),
-                                    SizedBox(width: 4.w),
-                                    Text(
-                                      '5 more',
-                                      style: TextStyle(
-                                        color: Colors.blue,
-                                        fontWeight: FontWeight.normal,
-                                        fontSize: 16.sp,
-                                        fontFamily: 'SF Pro Rounded',
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ],
-                            ),
-                          ],
-                        ),
-                        SizedBox(height: 45.w),
+                        DesignWidget(),
+                        SizedBox(height: 45.h),
+                        ButtonWidget()
                       ],
                     ),
                   ),
                 ),
               ),
             ),
-
-            SizedBox(height: 100.h),
+            SizedBox(height: 30.h),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -290,7 +124,7 @@ class _Course_cState extends State<Course_c> {
                 ],
               ),
               child: SizedBox(
-                height: 220.h,
+                // height: 242.h,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Column(
@@ -320,7 +154,7 @@ class _Course_cState extends State<Course_c> {
                           ),
                         ],
                       ),
-                      SizedBox(height: 40.h),
+                      SizedBox(height: 30.h),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.pushReplacement(
@@ -381,7 +215,8 @@ class _Course_cState extends State<Course_c> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Bottom_Navigation()));
+                                        builder: (context) =>
+                                            Bottom_Navigation()));
                               },
                               style: ElevatedButton.styleFrom(
                                 primary: Colors.white,
@@ -404,6 +239,9 @@ class _Course_cState extends State<Course_c> {
                           ],
                         ),
                       ),
+                      SizedBox(
+                        height: 20.h,
+                      )
                     ],
                   ),
                 ),

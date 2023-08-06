@@ -13,12 +13,12 @@ class _NotWidgetState extends State<NotWidget> {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
+     // scrollDirection: Axis.horizontal,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 10),
             child: Row(
               children: [
                 Checkbox(
@@ -32,14 +32,14 @@ class _NotWidgetState extends State<NotWidget> {
 
             Container(
               height: 100.h,
-              width: 335.w,
+              width: 305.w,
               decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(15),
               ),
               child: Row(
                 children: [
-                  SizedBox(width: 15.w),
+                  SizedBox(width: 5.w),
                   Container(
                     width: 68.w,
                     height: 68.h,
@@ -47,15 +47,15 @@ class _NotWidgetState extends State<NotWidget> {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.blue.shade100),
                   ),
-                  SizedBox(width: 20.w),
+                  SizedBox(width: 10.w),
                   Padding(
                     padding: const EdgeInsets.symmetric(vertical: 10),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(width: 30.w),
+                        SizedBox(width: 20.w),
                         Text(
-                          'Design Thingking Fundamental',
+                          'Design Thingking Fundam...',
                           style: TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.normal,
@@ -126,9 +126,9 @@ class _NotWidgetState extends State<NotWidget> {
               ],
             ),
           ),
-          SizedBox(height: 10.h),
+          SizedBox(height: 15.h),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 100),
+            padding: const EdgeInsets.symmetric(horizontal: 70),
             child: Row(
               children: [
                 Text(

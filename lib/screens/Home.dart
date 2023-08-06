@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:secoola/screens/Cart_f.dart';
 import 'package:secoola/screens/Search.dart';
-
 import 'package:secoola/widgets/CategoryWidget.dart';
 import 'package:secoola/widgets/H_coursesWidget.dart';
 import 'package:secoola/widgets/TopicWidget.dart';
-import 'package:secoola/models/CustomBottomSheet.dart';
 import 'package:secoola/screens/Not_BottomSheet.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -104,7 +102,6 @@ class _HomeState extends State<Home> {
                         },
                         icon: const Row(
                           mainAxisAlignment: MainAxisAlignment.end,
-
                           children: [
                             Center(
                               child: Icon(
@@ -142,7 +139,6 @@ class _HomeState extends State<Home> {
                         },
                         icon: const Row(
                           mainAxisAlignment: MainAxisAlignment.end,
-
                           children: [
                             Center(
                               child: Icon(
@@ -152,9 +148,7 @@ class _HomeState extends State<Home> {
                             ),
                           ],
                         ),
-
                       ),
-
                     ),
                   ],
                 ),

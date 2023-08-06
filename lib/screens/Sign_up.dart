@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:secoola/screens/Bottom_Navigation.dart';
 import 'package:secoola/screens/Login.dart';
+import 'package:secoola/screens/Topic.dart';
 
 class Sign_up extends StatefulWidget {
   const Sign_up({super.key});
@@ -35,8 +35,8 @@ class _Sign_upState extends State<Sign_up> with SingleTickerProviderStateMixin {
 
   validator() {
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
-      Navigator.pushReplacement(context,
-          MaterialPageRoute(builder: (context) => const Bottom_Navigation()));
+      Navigator.pushReplacement(
+          context, MaterialPageRoute(builder: (context) => const Topic()));
     } else {}
   }
 
@@ -199,8 +199,9 @@ class _Sign_upState extends State<Sign_up> with SingleTickerProviderStateMixin {
                                 r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
                             .hasMatch(value)) {
                           return "Invalid Email Address";
-                        } else
+                        } else {
                           return null;
+                        }
                       },
                     ),
                   ),
@@ -244,7 +245,7 @@ class _Sign_upState extends State<Sign_up> with SingleTickerProviderStateMixin {
                           ),
                         ),
                         validator: (String? value) {
-                          if (value == null || value.trim().length == 0) {
+                          if (value == null || value.trim().isEmpty) {
                             return "*Required";
                           }
                           if (value.trim().length < 6) {

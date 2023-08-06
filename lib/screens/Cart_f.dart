@@ -15,29 +15,27 @@ class _Cart_fState extends State<Cart_f> {
   Widget build(BuildContext context) {
     return Scaffold(
       body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              SizedBox(height: 40.h),
-              Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 30),
-                child: Text(
-                  'Your Items',
-                  style: TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 18.sp,
-                    fontFamily: 'SF Pro Rounded',
-                  ),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(height: 40.h),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Text(
+                'Your Items',
+                style: TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.normal,
+                  fontSize: 18.sp,
+                  fontFamily: 'SF Pro Rounded',
                 ),
               ),
-              SizedBox(height: 20.h),
-              const NotWidget(),
-              SizedBox(height: 40.h),
-              const NotWidget(),
-            ],
-          ),
+            ),
+            SizedBox(height: 20.h),
+            const NotWidget(),
+            SizedBox(height: 40.h),
+            const NotWidget(),
+          ],
         ),
       ),
       bottomNavigationBar: Container(

@@ -93,6 +93,8 @@ class _Continue_cState extends State<Continue_c> {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: SingleChildScrollView(
+                    physics: const BouncingScrollPhysics(),
+
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [

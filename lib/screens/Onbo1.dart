@@ -92,88 +92,16 @@ class _Onbo1State extends State<Onbo1> {
                       imageUrl: item.imageUrl,
                       fit: BoxFit.cover,
                       placeholder: (context, url) =>
-                          const CircularProgressIndicator(),
-                      errorWidget: (context, url, error) =>
-                          const Icon(Icons.error),
+                      const CircularProgressIndicator(),
+                      errorWidget: (context, url, error) => const Icon(Icons.error),
                     ),
-                    SizedBox(height: 50.h),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 34),
-                      child: Column(
-                        children: [
-                          Text(
-                            item.text,
-                            style: TextStyle(
-                              fontSize: 24.sp,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.black,
-                            ),
-                          ),
-                          SizedBox(height: 21.h),
-                          Text(
-                            'Find your best experience while studying and seeking knowledge here',
-                            textAlign: TextAlign.center,
-                            style: TextStyle(
-                              fontSize: 14.sp,
-                              fontWeight: FontWeight.normal,
-                              color: Colors.grey,
-                            ),
-                          ),
-                          SizedBox(height: 50.h),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Sign_up(),
-                                ),
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                              primary: const Color(0xFF00A9B7),
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                              ),
-                              minimumSize: Size(375.w, 48.h),
-                            ),
-                            child: Text(
-                              'Let\'s Get Started',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                          ),
-                          SizedBox(height: 20.h),
-                          ElevatedButton(
-                            onPressed: () {
-                              Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => const Login(),
-                                ),
-                              );
-                            },
-                            style: ElevatedButton.styleFrom(
-                              primary: Colors.white,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(20),
-                                side:
-                                    BorderSide(color: Colors.blue, width: 1.w),
-                              ),
-                              minimumSize: Size(375.w, 48.h),
-                            ),
-                            child: Text(
-                              'I already have an account',
-                              style: TextStyle(
-                                color: Colors.blue.shade500,
-                                fontSize: 16.sp,
-                                fontWeight: FontWeight.normal,
-                              ),
-                            ),
-                          ),
-                        ],
+                    SizedBox(height: 20.h),
+                    Text(
+                      item.text,
+                      style: TextStyle(
+                        fontSize: 24.sp,
+                        fontWeight: FontWeight.normal,
+                        color: Colors.black,
                       ),
                     ),
                   ],
@@ -181,6 +109,78 @@ class _Onbo1State extends State<Onbo1> {
               },
             ),
           ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 34),
+            child: Column(
+              children: [
+
+                SizedBox(height: 10.h),
+                Text(
+                  'Find your best experience while studying and seeking knowledge here',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 14.sp,
+                    fontWeight: FontWeight.normal,
+                    color: Colors.grey,
+                  ),
+                ),
+                SizedBox(height: 120.h),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Sign_up(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: const Color(0xFF00A9B7),
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                    minimumSize: Size(375.w, 48.h),
+                  ),
+                  child: Text(
+                    'Let\'s Get Started',
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                ),
+                SizedBox(height: 20.h),
+                ElevatedButton(
+                  onPressed: () {
+                    Navigator.pushReplacement(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => const Login(),
+                      ),
+                    );
+                  },
+                  style: ElevatedButton.styleFrom(
+                    primary: Colors.white,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      side: BorderSide(color: Colors.blue, width: 1.w),
+                    ),
+                    minimumSize: Size(375.w, 48.h),
+                  ),
+                  child: Text(
+                    'I already have an account',
+                    style: TextStyle(
+                      color: Colors.blue.shade500,
+                      fontSize: 16.sp,
+                      fontWeight: FontWeight.normal,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+
         ],
       ),
     );

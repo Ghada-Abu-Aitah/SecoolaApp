@@ -98,7 +98,7 @@ class _DesignWidgetState extends State<DesignWidget> {
                   ),
                 ],
               ),
-              SizedBox(width: 118.w),
+              SizedBox(width: 90.w),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -152,7 +152,7 @@ class _DesignWidgetState extends State<DesignWidget> {
                   ),
                 ],
               ),
-              SizedBox(width: 99.w),
+              SizedBox(width: 75.w),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

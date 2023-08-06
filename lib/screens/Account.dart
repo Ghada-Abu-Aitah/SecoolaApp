@@ -58,6 +58,7 @@ class _AccountState extends State<Account> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Row(
+
                       children: [
                         SizedBox(width: 10.w),
                         Container(
@@ -92,10 +93,19 @@ class _AccountState extends State<Account> {
                             ),
                           ],
                         ),
-                        SizedBox(width: 120.w),
-                        IconButton(
-                          icon: const Icon(Icons.edit),
-                          onPressed: () {},
+                        SizedBox(width: 100.w),
+
+                        Expanded(
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.end,
+                            children: [
+                              IconButton(
+                                icon: const Icon(
+                                    Icons.edit),
+                                onPressed: () {},
+                              ),
+                            ],
+                          ),
                         ),
                       ],
                     ),
@@ -116,7 +126,7 @@ class _AccountState extends State<Account> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Container(
-                        height: 160.h,
+                        height: 170.h,
                         width: 325.w,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -256,7 +266,7 @@ class _AccountState extends State<Account> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 15),
                       child: Container(
-                        height: 160.h,
+                        height: 170.h,
                         width: 325.w,
                         decoration: BoxDecoration(
                           color: Colors.white,
@@ -484,8 +494,7 @@ class _AccountState extends State<Account> {
                       ),
                     ),
                     SizedBox(height: 40.h),
-                    Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 160),
+                    Center(
                       child: GestureDetector(
                         onTap: () {
                           Navigator.pushReplacement(

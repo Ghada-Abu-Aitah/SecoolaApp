@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Bottom_Navigation(),
+        home: Secoola(),
       ),
     );
   }

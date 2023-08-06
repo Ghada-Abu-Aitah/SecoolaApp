@@ -76,7 +76,7 @@ class _HomeState extends State<Home> {
                     ),
                   ],
                 ),
-                SizedBox(width: 100.w),
+                SizedBox(width: 60.w),
                 Row(
                   children: [
                     Container(
@@ -102,19 +102,27 @@ class _HomeState extends State<Home> {
                             },
                           );
                         },
-                        icon: const Icon(
-                          Icons.shopping_cart_rounded,
-                          color: Colors.white,
+                        icon: const Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+
+                          children: [
+                            Center(
+                              child: Icon(
+                                Icons.shopping_cart_rounded,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
                         ),
                       ),
                     ),
                     SizedBox(width: 10.w),
                     Container(
                       height: 40.h,
-                      width: 38.w,
+                      width: 40.w,
                       decoration: BoxDecoration(
                         color: const Color(0xFFB2B2B2),
-                        borderRadius: BorderRadius.circular(15),
+                        borderRadius: BorderRadius.circular(15.r),
                       ),
                       child: IconButton(
                         onPressed: () {
@@ -132,11 +140,21 @@ class _HomeState extends State<Home> {
                             },
                           );
                         },
-                        icon: const Icon(
-                          Icons.notifications,
-                          color: Colors.white,
+                        icon: const Row(
+                          mainAxisAlignment: MainAxisAlignment.end,
+
+                          children: [
+                            Center(
+                              child: Icon(
+                                Icons.notifications,
+                                color: Colors.white,
+                              ),
+                            ),
+                          ],
                         ),
+
                       ),
+
                     ),
                   ],
                 ),

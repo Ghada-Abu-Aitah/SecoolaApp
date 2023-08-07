@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/models/CurrTap.dart';
 import 'package:secoola/models/RevTab.dart';
-import 'package:secoola/screens/Course_c.dart';
 
 class ButtonWidget extends StatefulWidget {
   const ButtonWidget({Key? key}) : super(key: key);
@@ -29,7 +28,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
             width: 335.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color(0xFFF4F4F4),
+              color: const Color(0xFFF4F4F4),
             ),
             child: Row(
               children: [
@@ -41,12 +40,12 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                       });
                     },
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 300),
+                      duration: const Duration(milliseconds: 300),
                       height: 38.h,
                       width: 158.w,
                       decoration: BoxDecoration(
                         color: current == index
-                            ? Color(0xFF00A9B7)
+                            ? const Color(0xFF00A9B7)
                             : Colors.grey.shade100,
                         borderRadius: current == index
                             ? BorderRadius.circular(15)
@@ -56,7 +55,8 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                         child: Text(
                           items[index],
                           style: TextStyle(
-                            color: current == index ? Colors.white : Colors.black,
+                            color:
+                                current == index ? Colors.white : Colors.black,
                             fontSize: 16.sp,
                             fontWeight: FontWeight.normal,
                             fontFamily: 'SF Pro Rounded',
@@ -70,14 +70,12 @@ class _ButtonWidgetState extends State<ButtonWidget> {
           ),
           SizedBox(height: 20.h),
           if (current == 0) ...[
-            CurrTap(),
-
+            const CurrTap(),
           ] else ...[
-            RevTab(),
+            const RevTab(),
           ],
         ],
       ),
     );
   }
 }
-

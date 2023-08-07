@@ -52,11 +52,13 @@ class H_coursesWidget extends StatelessWidget {
                 children: [
                   InkWell(
                     onTap: () {
-                      Navigator.pushReplacement(context,
-                          MaterialPageRoute(builder: (context) => Course_c()));
+                      Navigator.pushReplacement(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Course_c()));
                     },
                     child: Container(
-                      margin: EdgeInsets.symmetric(horizontal: 10),
+                      margin: const EdgeInsets.symmetric(horizontal: 10),
                       width: 220.w,
                       height: 140.h,
                       decoration: BoxDecoration(
@@ -75,13 +77,13 @@ class H_coursesWidget extends StatelessWidget {
                                   height: 28.h,
                                   width: 49.w,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFFFFFFFF),
+                                    color: const Color(0xFFFFFFFF),
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Row(
                                     children: [
                                       SizedBox(width: 6.w),
-                                      Icon(
+                                      const Icon(
                                         Icons.star,
                                         color: Colors.orangeAccent,
                                         size: 14,
@@ -102,10 +104,10 @@ class H_coursesWidget extends StatelessWidget {
                                   height: 28.h,
                                   width: 28.w,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFFFFFFFF),
+                                    color: const Color(0xFFFFFFFF),
                                     borderRadius: BorderRadius.circular(10.r),
                                   ),
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.favorite,
                                     color: Colors.red,
                                     size: 16,
@@ -117,7 +119,7 @@ class H_coursesWidget extends StatelessWidget {
                           InkWell(
                             onTap: () {},
                             child: Container(
-                              margin: EdgeInsets.all(10),
+                              margin: const EdgeInsets.all(10),
                             ),
                           ),
                         ],
@@ -143,7 +145,7 @@ class H_coursesWidget extends StatelessWidget {
                         SizedBox(height: 10.h),
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.person,
                               color: Colors.grey,
                               size: 18,
@@ -177,7 +179,7 @@ class H_coursesWidget extends StatelessWidget {
                               height: 20.h,
                               width: 94.w,
                               decoration: BoxDecoration(
-                                color: Color(0xFFFCE2EA),
+                                color: const Color(0xFFFCE2EA),
                                 borderRadius: BorderRadius.circular(20.r),
                               ),
                               child: Center(

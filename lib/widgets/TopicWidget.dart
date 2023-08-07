@@ -52,7 +52,8 @@ class TopicWidget extends StatelessWidget {
                   InkWell(
                     onTap: () {},
                     child: Container(
-                      margin: EdgeInsets.symmetric(vertical: 0, horizontal: 10),
+                      margin: const EdgeInsets.symmetric(
+                          vertical: 0, horizontal: 10),
                       width: 142.w,
                       height: 100.h,
                       decoration: BoxDecoration(
@@ -71,13 +72,13 @@ class TopicWidget extends StatelessWidget {
                                   height: 28.h,
                                   width: 49.w,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFFFFFFFF),
+                                    color: const Color(0xFFFFFFFF),
                                     borderRadius: BorderRadius.circular(10),
                                   ),
                                   child: Row(
                                     children: [
                                       SizedBox(width: 6.w),
-                                      Icon(
+                                      const Icon(
                                         Icons.star,
                                         color: Colors.orangeAccent,
                                         size: 14,
@@ -98,10 +99,10 @@ class TopicWidget extends StatelessWidget {
                                   height: 28.h,
                                   width: 28.w,
                                   decoration: BoxDecoration(
-                                    color: Color(0xFFFFFFFF),
+                                    color: const Color(0xFFFFFFFF),
                                     borderRadius: BorderRadius.circular(10),
                                   ),
-                                  child: Icon(
+                                  child: const Icon(
                                     Icons.favorite,
                                     color: Colors.red,
                                     size: 16,
@@ -113,7 +114,7 @@ class TopicWidget extends StatelessWidget {
                           InkWell(
                             onTap: () {},
                             child: Container(
-                              margin: EdgeInsets.all(10),
+                              margin: const EdgeInsets.all(10),
                             ),
                           ),
                         ],
@@ -139,7 +140,7 @@ class TopicWidget extends StatelessWidget {
                         SizedBox(height: 10.h),
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.person,
                               color: Colors.grey,
                               size: 18,
@@ -173,7 +174,7 @@ class TopicWidget extends StatelessWidget {
                               height: 20.h,
                               width: 94.w,
                               decoration: BoxDecoration(
-                                color: Color(0xFFDCF3F5),
+                                color: const Color(0xFFDCF3F5),
                                 borderRadius: BorderRadius.circular(20),
                               ),
                               child: Center(

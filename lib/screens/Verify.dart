@@ -75,7 +75,7 @@ class _VerifyState extends State<Verify> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Text(
-                'Check your inbox, we have send the Varification code to your email.',
+                'Check your inbox, we have send the Verification code to your email.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14.sp,

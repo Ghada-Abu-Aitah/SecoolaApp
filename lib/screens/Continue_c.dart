@@ -41,7 +41,9 @@ class _Continue_cState extends State<Continue_c> {
               ),
               onPressed: () {
                 Navigator.pushReplacement(
-                    context, MaterialPageRoute(builder: (context) => const Bottom_Navigation()));
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const Bottom_Navigation()));
               },
             ),
           ),
@@ -80,8 +82,6 @@ class _Continue_cState extends State<Continue_c> {
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.yellow.shade100),
             ),
-
-
             SingleChildScrollView(
               child: Container(
                 height: 400.h,
@@ -94,13 +94,10 @@ class _Continue_cState extends State<Continue_c> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: SingleChildScrollView(
                     physics: const BouncingScrollPhysics(),
-
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-
-                       DesignWidget(),
-
+                        DesignWidget(),
                         SizedBox(height: 40.h),
                         ConWidget()
                       ],
@@ -109,10 +106,6 @@ class _Continue_cState extends State<Continue_c> {
                 ),
               ),
             ),
-
-
-
-
             SizedBox(height: 10.h),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
@@ -163,8 +156,8 @@ class _Continue_cState extends State<Continue_c> {
                         ),
                       ),
                       const Padding(
-                        padding: EdgeInsets.symmetric(
-                            horizontal: 15, vertical: 15),
+                        padding:
+                            EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                         child: Icon(
                           Icons.done,
                           size: 28,

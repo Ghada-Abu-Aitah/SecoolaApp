@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:secoola/widgets/TabWidget.dart';
 
 class DesignWidget extends StatefulWidget {
   const DesignWidget({super.key});
@@ -13,7 +12,7 @@ class _DesignWidgetState extends State<DesignWidget> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.all(16.0),
+      padding: const EdgeInsets.all(16.0),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -30,7 +29,7 @@ class _DesignWidgetState extends State<DesignWidget> {
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
-              Icon(
+              const Icon(
                 Icons.person,
                 color: Color(0xFF00A9B7),
               ),
@@ -38,14 +37,14 @@ class _DesignWidgetState extends State<DesignWidget> {
               Text(
                 'Halo Academy',
                 style: TextStyle(
-                  color: Color(0xFF00A9B7),
+                  color: const Color(0xFF00A9B7),
                   fontWeight: FontWeight.normal,
                   fontSize: 16.sp,
                   fontFamily: 'SF Pro Rounded',
                 ),
               ),
               SizedBox(width: 50.w),
-              Icon(
+              const Icon(
                 Icons.star,
                 color: Colors.yellow,
               ),

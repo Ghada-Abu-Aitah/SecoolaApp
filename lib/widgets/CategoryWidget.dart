@@ -22,7 +22,7 @@ class CategoryWidget extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.image,
                       color: Colors.blue,
                     ),
@@ -50,7 +50,7 @@ class CategoryWidget extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.laptop,
                       color: Colors.black,
                     ),
@@ -78,7 +78,7 @@ class CategoryWidget extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.design_services,
                       color: Colors.red,
                     ),
@@ -106,7 +106,7 @@ class CategoryWidget extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.health_and_safety,
                       color: Colors.green,
                     ),
@@ -138,7 +138,7 @@ class CategoryWidget extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 5),
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.business_center,
                       color: Colors.brown,
                     ),
@@ -194,7 +194,7 @@ class CategoryWidget extends StatelessWidget {
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: Row(
                   children: [
-                    Icon(
+                    const Icon(
                       Icons.run_circle_outlined,
                       color: Colors.yellow,
                     ),

@@ -39,7 +39,7 @@ class Course extends StatelessWidget {
             SizedBox(height: 10.h),
             Row(
               children: [
-                Icon(
+                const Icon(
                   Icons.person,
                   color: Colors.grey,
                   size: 14,

@@ -90,7 +90,7 @@ class _FAQsState extends State<FAQs> {
             animationDuration: const Duration(seconds: 1),
             elevation: 0,
             expandedHeaderPadding: EdgeInsets.zero,
-            dividerColor: Colors.grey,
+            dividerColor: Colors.grey.shade200,
             expansionCallback: (panelIndex, isExpanded) {
               setState(() => _faqs[panelIndex].isExpanded = !isExpanded);
             },

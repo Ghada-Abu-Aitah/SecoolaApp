@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/screens/Pay_Success.dart';
+
 class Bottom_AppBar extends StatefulWidget {
   const Bottom_AppBar({super.key});
 
@@ -13,7 +14,6 @@ class _Bottom_AppBarState extends State<Bottom_AppBar> {
   Widget build(BuildContext context) {
     return Scaffold(
       bottomNavigationBar: Container(
-
         decoration: BoxDecoration(
           color: Colors.white,
           boxShadow: [
@@ -21,7 +21,7 @@ class _Bottom_AppBarState extends State<Bottom_AppBar> {
               color: Colors.grey.shade200.withOpacity(0.50),
               spreadRadius: 15,
               blurRadius: 5,
-              offset: Offset(0, 10),
+              offset: const Offset(0, 10),
             ),
           ],
         ),
@@ -51,7 +51,6 @@ class _Bottom_AppBarState extends State<Bottom_AppBar> {
                       // Button widget
                       ElevatedButton(
                         onPressed: () {},
-                        child: Text('VEKTORABELAJAR   :'),
                         style: ElevatedButton.styleFrom(
                           primary: Colors.blue.shade50,
                           onPrimary: Colors.blue,
@@ -59,6 +58,7 @@ class _Bottom_AppBarState extends State<Bottom_AppBar> {
                             borderRadius: BorderRadius.circular(10),
                           ),
                         ),
+                        child: const Text('VEKTORABELAJAR   :'),
                       ),
                     ],
                   ),
@@ -102,23 +102,23 @@ class _Bottom_AppBarState extends State<Bottom_AppBar> {
                           Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
-                              builder: (context) => Pay_Success(),
+                              builder: (context) => const Pay_Success(),
                             ),
                           );
                         },
-                        child: Text(
-                          'Checkout',
-                          style: TextStyle(
-                            fontSize: 16.sp,
-                          ),
-                        ),
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFF00A9B7),
+                          primary: const Color(0xFF00A9B7),
                           onPrimary: Colors.white,
                           shape: RoundedRectangleBorder(
                             borderRadius: BorderRadius.circular(20),
                           ),
                           minimumSize: Size(157.w, 52.h),
+                        ),
+                        child: Text(
+                          'Checkout',
+                          style: TextStyle(
+                            fontSize: 16.sp,
+                          ),
                         ),
                       ),
                     ],

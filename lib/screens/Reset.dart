@@ -140,7 +140,7 @@ class _ResetState extends State<Reset> {
                           ),
                         ),
                         validator: (String? value) {
-                          if (value == null || value.trim().length == 0) {
+                          if (value == null || value.trim().isEmpty) {
                             return "*Required";
                           }
                           if (!RegExp(

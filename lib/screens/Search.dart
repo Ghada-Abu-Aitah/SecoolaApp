@@ -4,7 +4,7 @@ import 'package:secoola/screens/Bottom_Navigation.dart';
 import 'package:secoola/screens/S_result.dart';
 
 class Search extends StatefulWidget {
-  const Search({super.key});
+  const Search({Key? key}) : super(key: key);
 
   @override
   State<Search> createState() => _SearchState();
@@ -12,6 +12,48 @@ class Search extends StatefulWidget {
 
 class _SearchState extends State<Search> {
   final TextEditingController _searchController = TextEditingController();
+
+  final List<String> texts = ['Cooking', 'Python', 'Excel', 'Coding'];
+
+  Widget CategoryRow({
+    required IconData icon,
+    required String text,
+    required Color iconColor,
+  }) {
+    return Row(
+      children: [
+        SizedBox(width: 10.w),
+        IconButton(
+          icon: Icon(
+            icon,
+            color: iconColor,
+          ),
+          onPressed: () {},
+        ),
+        SizedBox(width: 15.w),
+        Text(
+          text,
+          style: TextStyle(
+            color: Colors.grey.shade800,
+            fontWeight: FontWeight.normal,
+            fontSize: 14.sp,
+            fontFamily: 'SF Pro Rounded',
+          ),
+        ),
+        Expanded(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.end,
+            children: [
+              IconButton(
+                icon: const Icon(Icons.chevron_right_outlined),
+                onPressed: () {},
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
 
   @override
   void dispose() {
@@ -24,7 +66,6 @@ class _SearchState extends State<Search> {
     return Scaffold(
       backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
-
         leading: IconButton(
           icon: const Icon(
             Icons.arrow_back_ios,
@@ -106,90 +147,32 @@ class _SearchState extends State<Search> {
             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Container(
-                      height: 38.h,
-                      width: 85.w,
-                      decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(15),
-                      ),
-                      padding: const EdgeInsets.symmetric(horizontal: 10),
-                      alignment: Alignment.center,
-                      child: Text(
-                        'Cooking',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 14.sp,
-                          fontFamily: 'SF Pro Rounded',
+                children: texts
+                    .map(
+                      (text) => Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Container(
+                          height: 38.h,
+                          width: 85.w,
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          padding: const EdgeInsets.symmetric(horizontal: 10),
+                          alignment: Alignment.center,
+                          child: Text(
+                            text,
+                            style: TextStyle(
+                              color: Colors.black,
+                              fontWeight: FontWeight.normal,
+                              fontSize: 14.sp,
+                              fontFamily: 'SF Pro Rounded',
+                            ),
+                          ),
                         ),
                       ),
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Container(
-                    height: 38.h,
-                    width: 85.w,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Python',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14.sp,
-                        fontFamily: 'SF Pro Rounded',
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Container(
-                    height: 38.h,
-                    width: 85.w,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Excel',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14.sp,
-                        fontFamily: 'SF Pro Rounded',
-                      ),
-                    ),
-                  ),
-                  SizedBox(width: 10.w),
-                  Container(
-                    height: 38.h,
-                    width: 85.w,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    padding: const EdgeInsets.symmetric(horizontal: 10),
-                    alignment: Alignment.center,
-                    child: Text(
-                      'Coding',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14.sp,
-                        fontFamily: 'SF Pro Rounded',
-                      ),
-                    ),
-                  ),
-                ],
+                    )
+                    .toList(),
               ),
             ),
             SingleChildScrollView(
@@ -262,243 +245,48 @@ class _SearchState extends State<Search> {
                 ),
               ),
             ),
-
             SizedBox(height: 35.h),
-            Row(
-              children: [
-                SizedBox(width: 10.w),
-                IconButton(
-                  icon: const Icon(
-                    Icons.broken_image_outlined,
-                    color: Colors.pink,
-                  ),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 15.w),
-                Text(
-                  'Art',
-                  style: TextStyle(
-                    color: Colors.grey.shade800,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14.sp,
-                    fontFamily: 'SF Pro Rounded',
-                  ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.chevron_right_outlined),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            CategoryRow(
+              icon: Icons.broken_image_outlined,
+              text: 'Art',
+              iconColor: Colors.pink,
             ),
             SizedBox(height: 10.h),
-            Row(
-              children: [
-                SizedBox(width: 10.w),
-                IconButton(
-                  icon: const Icon(
-                    Icons.computer,
-                    color: Colors.blue,
-                  ),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 15.w),
-                Text(
-                  'Coding',
-                  style: TextStyle(
-                    color: Colors.grey.shade800,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14.sp,
-                    fontFamily: 'SF Pro Rounded',
-                  ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.chevron_right_outlined),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            CategoryRow(
+              icon: Icons.computer,
+              text: 'Coding',
+              iconColor: Colors.blue,
             ),
             SizedBox(height: 10.h),
-            Row(
-              children: [
-                SizedBox(width: 10.w),
-                IconButton(
-                  icon: const Icon(
-                    Icons.design_services,
-                    color: Colors.brown,
-                  ),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 15.w),
-                Text(
-                  'Design',
-                  style: TextStyle(
-                    color: Colors.grey.shade800,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14.sp,
-                    fontFamily: 'SF Pro Rounded',
-                  ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.chevron_right_outlined),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            CategoryRow(
+              icon: Icons.design_services,
+              text: 'Design',
+              iconColor: Colors.brown,
             ),
             SizedBox(height: 10.h),
-            Row(
-              children: [
-                SizedBox(width: 10.w),
-                IconButton(
-                  icon: const Icon(Icons.mobile_friendly),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 15.w),
-                Text(
-                  'Marketing',
-                  style: TextStyle(
-                    color: Colors.grey.shade800,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14.sp,
-                    fontFamily: 'SF Pro Rounded',
-                  ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.chevron_right_outlined),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            CategoryRow(
+              icon: Icons.mobile_friendly,
+              text: 'Marketing',
+              iconColor: Colors.brown,
             ),
             SizedBox(height: 10.h),
-            Row(
-              children: [
-                SizedBox(width: 10.w),
-                IconButton(
-                  icon: const Icon(
-                    Icons.style_outlined,
-                    color: Colors.green,
-                  ),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 15.w),
-                Text(
-                  'Lifestyle',
-                  style: TextStyle(
-                    color: Colors.grey.shade800,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14.sp,
-                    fontFamily: 'SF Pro Rounded',
-                  ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.chevron_right_outlined),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            CategoryRow(
+              icon: Icons.style_outlined,
+              text: 'Lifestyle',
+              iconColor: Colors.green,
             ),
             SizedBox(height: 10.h),
-            Row(
-              children: [
-                SizedBox(width: 10.w),
-                IconButton(
-                  icon: const Icon(
-                    Icons.health_and_safety,
-                    color: Colors.blue,
-                  ),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 15.w),
-                Text(
-                  'Health',
-                  style: TextStyle(
-                    color: Colors.grey.shade800,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14.sp,
-                    fontFamily: 'SF Pro Rounded',
-                  ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.chevron_right_outlined),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            CategoryRow(
+              icon: Icons.health_and_safety,
+              text: 'Health',
+              iconColor: Colors.blue,
             ),
             SizedBox(height: 10.h),
-            Row(
-              children: [
-                SizedBox(width: 10.w),
-                IconButton(
-                  icon: const Icon(
-                    Icons.business_center,
-                    color: Colors.brown,
-                  ),
-                  onPressed: () {},
-                ),
-                SizedBox(width: 15.w),
-                Text(
-                  'Business',
-                  style: TextStyle(
-                    color: Colors.grey.shade800,
-                    fontWeight: FontWeight.normal,
-                    fontSize: 14.sp,
-                    fontFamily: 'SF Pro Rounded',
-                  ),
-                ),
-                Expanded(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      IconButton(
-                        icon: const Icon(Icons.chevron_right_outlined),
-                        onPressed: () {},
-                      ),
-                    ],
-                  ),
-                ),
-              ],
+            CategoryRow(
+              icon: Icons.business_center,
+              text: 'Business',
+              iconColor: Colors.brown,
             ),
-
           ],
         ),
       ),

@@ -152,7 +152,7 @@ class _Set_passState extends State<Set_pass> {
                             ),
                           ),
                           validator: (String? value) {
-                            if (value == null || value.trim().length == 0) {
+                            if (value == null || value.trim().isEmpty) {
                               return "*Required";
                             }
                             if (value.trim().length < 6) {

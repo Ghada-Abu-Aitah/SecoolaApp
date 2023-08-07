@@ -39,12 +39,9 @@ class _LoginState extends State<Login> {
 
   validator() {
     if (_formKey.currentState != null && _formKey.currentState!.validate()) {
-      print('validated');
       Navigator.pushReplacement(
           context, MaterialPageRoute(builder: (context) => const Topic()));
-    } else {
-      print('Not Validated');
-    }
+    } else {}
   }
 
   @override
@@ -211,8 +208,9 @@ class _LoginState extends State<Login> {
                                 r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
                             .hasMatch(value)) {
                           return "Invalid Email Address";
-                        } else
+                        } else {
                           return null;
+                        }
                       },
                     ),
                   ),

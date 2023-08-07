@@ -7,6 +7,8 @@ import 'package:secoola/widgets/TopicWidget.dart';
 import 'package:secoola/screens/Not_BottomSheet.dart';
 
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:secoola/widgets/tWidget.dart';
+import 'package:secoola/widgets/topWidget.dart';
 
 class Home extends StatefulWidget {
   const Home({super.key});
@@ -198,31 +200,9 @@ class _HomeState extends State<Home> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             SizedBox(height: 20.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text(
-                    'Popular course',
-                    style: TextStyle(
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 18.sp,
-                      fontFamily: 'SF Pro Rounded',
-                    ),
-                  ),
-                  Text(
-                    'See all',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 14.sp,
-                      fontFamily: 'SF Pro Rounded',
-                    ),
-                  ),
-                ],
-              ),
+            const tWidget(
+              title: 'Popular course',
+              subtitle: 'See all',
             ),
             SizedBox(height: 20.h),
             H_coursesWidget(),
@@ -231,27 +211,9 @@ class _HomeState extends State<Home> {
               padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Column(
                 children: [
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                    children: [
-                      Text(
-                        'Categories',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 18.sp,
-                          fontFamily: 'SF Pro Rounded',
-                        ),
-                      ),
-                      Text(
-                        'See all',
-                        style: TextStyle(
-                          color: Colors.blue,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 14.sp,
-                        ),
-                      ),
-                    ],
+                  const tWidget(
+                    title: 'Categories',
+                    subtitle: 'See all',
                   ),
                   SizedBox(height: 20.h),
                   const CategoryWidget(),
@@ -259,159 +221,26 @@ class _HomeState extends State<Home> {
               ),
             ),
             SizedBox(height: 50.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Your topic',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 18.sp,
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      Container(
-                        height: 20.h,
-                        width: 50.w,
-                        decoration: BoxDecoration(
-                          color: Colors.blue.shade50,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Design',
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    'See all',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 14.sp,
-                      fontFamily: 'SF Pro Rounded',
-                    ),
-                  ),
-                ],
-              ),
+            const topWidget(
+              title: 'Your Topic',
+              title2: 'Design',
+              subtitle: 'See all',
             ),
             SizedBox(height: 20.h),
             TopicWidget(),
             SizedBox(height: 40.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Your topic',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 18.sp,
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      Container(
-                        height: 20.h,
-                        width: 50.w,
-                        decoration: BoxDecoration(
-                          color: Colors.blue.shade50,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Coding',
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    'See all',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 14.sp,
-                      fontFamily: 'SF Pro Rounded',
-                    ),
-                  ),
-                ],
-              ),
+            const topWidget(
+              title: 'Your Topic',
+              title2: 'Coding',
+              subtitle: 'See all',
             ),
             SizedBox(height: 20.h),
             TopicWidget(),
             SizedBox(height: 40.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Row(
-                    children: [
-                      Text(
-                        'Your topic',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 18.sp,
-                          //    fontFamily: 'SF Pro Rounded',
-                        ),
-                      ),
-                      SizedBox(width: 10.w),
-                      Container(
-                        height: 20.h,
-                        width: 75.w,
-                        decoration: BoxDecoration(
-                          color: Colors.blue.shade50,
-                          borderRadius: BorderRadius.circular(20),
-                        ),
-                        child: Center(
-                          child: Text(
-                            'Marketing',
-                            style: TextStyle(
-                              color: Colors.blue,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Text(
-                    'See all',
-                    style: TextStyle(
-                      color: Colors.blue,
-                      fontWeight: FontWeight.normal,
-                      fontSize: 14.sp,
-                      fontFamily: 'SF Pro Rounded',
-                    ),
-                  ),
-                ],
-              ),
+            const topWidget(
+              title: 'Your Topic',
+              title2: 'Marketing',
+              subtitle: 'See all',
             ),
             SizedBox(height: 20.h),
             TopicWidget(),

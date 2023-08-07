@@ -26,7 +26,7 @@ class _ConWidgetState extends State<ConWidget> {
             width: 335.w,
             decoration: BoxDecoration(
               borderRadius: BorderRadius.circular(15),
-              color: Color(0xFFF4F4F4),
+              color: const Color(0xFFF4F4F4),
             ),
             child: Row(
               children: [
@@ -38,12 +38,12 @@ class _ConWidgetState extends State<ConWidget> {
                       });
                     },
                     child: AnimatedContainer(
-                      duration: Duration(milliseconds: 300),
+                      duration: const Duration(milliseconds: 300),
                       height: 38.h,
                       width: 158.w,
                       decoration: BoxDecoration(
                         color: current == index
-                            ? Color(0xFF00A9B7)
+                            ? const Color(0xFF00A9B7)
                             : Colors.grey.shade100,
                         borderRadius: current == index
                             ? BorderRadius.circular(15)

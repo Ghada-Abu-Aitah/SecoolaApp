@@ -2,14 +2,15 @@ import 'package:flutter/material.dart';
 import 'package:secoola/screens/Onbo1.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class Secoola extends StatefulWidget {
-  const Secoola({Key? key}) : super(key: key);
+class Splash extends StatefulWidget {
+  const Splash({Key? key}) : super(key: key);
 
   @override
-  State<Secoola> createState() => _SecoolaState();
+  State<Splash> createState() => _SplashState();
 }
 
-class _SecoolaState extends State<Secoola> {
+class _SplashState extends State<Splash> {
+  @override
   void initState() {
     super.initState();
     _navigatetohome(context);

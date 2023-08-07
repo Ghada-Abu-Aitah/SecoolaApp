@@ -3,6 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter/material.dart';
 
 class Continue extends StatelessWidget {
+  const Continue({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,7 +20,7 @@ class Continue extends StatelessWidget {
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withOpacity(0.5),
-                offset: Offset(0, 1),
+                offset: const Offset(0, 1),
               ),
             ],
           ),
@@ -53,9 +55,8 @@ class Continue extends StatelessWidget {
                   ),
                 ),
               ),
-              Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+              const Padding(
+                padding: EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                 child: Icon(
                   Icons.slow_motion_video_outlined,
                   size: 28,

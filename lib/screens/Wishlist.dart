@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import 'package:secoola/widgets/CoursesWidget.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:secoola/widgets/Search_barWidget.dart';
 
 class Wishlist extends StatefulWidget {
   const Wishlist({super.key});
@@ -11,13 +12,7 @@ class Wishlist extends StatefulWidget {
 }
 
 class _WishlistState extends State<Wishlist> {
-  TextEditingController _searchController = TextEditingController();
   bool result = true;
-
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -50,44 +45,12 @@ class _WishlistState extends State<Wishlist> {
               ],
             ),
             SizedBox(height: 50.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: SingleChildScrollView(
-                child: Container(
-                  width: 335.w,
-                  height: 48.h,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Icon(Icons.search, color: Colors.grey),
-                      ),
-                      Expanded(
-                        child: TextField(
-                          controller: _searchController,
-                          style: const TextStyle(color: Colors.black),
-                          decoration: const InputDecoration(
-                            hintText: 'Search for anything..',
-                            hintStyle: TextStyle(color: Colors.grey),
-                            border: InputBorder.none,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            const Search_bar(),
           ],
         ),
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
           child: CoursesWidget(),

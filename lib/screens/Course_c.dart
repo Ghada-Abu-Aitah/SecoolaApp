@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/screens/Bottom_Navigation.dart';
-import 'package:secoola/screens/Home.dart';
 import 'package:secoola/screens/Payment.dart';
-import 'package:secoola/screens/Wishlist.dart';
 import 'package:secoola/widgets/DesignWidget.dart';
 import 'package:secoola/widgets/TabWidget.dart';
 
@@ -42,7 +40,7 @@ class _Course_cState extends State<Course_c> {
                 Navigator.pushReplacement(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => Bottom_Navigation()));
+                        builder: (context) => const Bottom_Navigation()));
               },
             ),
           ),
@@ -55,12 +53,12 @@ class _Course_cState extends State<Course_c> {
               width: 38.w,
               decoration: BoxDecoration(
                 color: Colors.grey.shade400,
-                borderRadius: BorderRadius.circular(15),
+                borderRadius: BorderRadius.circular(15.r),
               ),
               child: Center(
                 child: IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.shopping_cart_rounded,
                     color: Colors.white,
                   ),
@@ -72,7 +70,6 @@ class _Course_cState extends State<Course_c> {
       ),
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
-
         child: Column(
           children: [
             Container(
@@ -84,7 +81,6 @@ class _Course_cState extends State<Course_c> {
             ),
             SingleChildScrollView(
               physics: const BouncingScrollPhysics(),
-
               child: Container(
                 height: 400.h,
                 width: 410.w,
@@ -96,14 +92,13 @@ class _Course_cState extends State<Course_c> {
                   padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: SingleChildScrollView(
                     physics: const BouncingScrollPhysics(),
-
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         SizedBox(height: 20.h),
-                        DesignWidget(),
+                        const DesignWidget(),
                         SizedBox(height: 45.h),
-                        ButtonWidget()
+                        const ButtonWidget()
                       ],
                     ),
                   ),
@@ -119,7 +114,7 @@ class _Course_cState extends State<Course_c> {
                     color: Colors.grey.shade200.withOpacity(0.50),
                     spreadRadius: 15,
                     blurRadius: 5,
-                    offset: Offset(0, 10),
+                    offset: const Offset(0, 10),
                   ),
                 ],
               ),
@@ -160,12 +155,12 @@ class _Course_cState extends State<Course_c> {
                           Navigator.pushReplacement(
                               context,
                               MaterialPageRoute(
-                                  builder: (context) => Payment()));
+                                  builder: (context) => const Payment()));
                         },
                         style: ElevatedButton.styleFrom(
-                          primary: Color(0xFF00A9B7),
+                          primary: const Color(0xFF00A9B7),
                           shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                            borderRadius: BorderRadius.circular(20.r),
                           ),
                           minimumSize: Size(335.w, 52.h),
                         ),
@@ -189,14 +184,15 @@ class _Course_cState extends State<Course_c> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Course_c()));
+                                        builder: (context) =>
+                                            const Course_c()));
                               },
                               style: ElevatedButton.styleFrom(
                                 primary: Colors.white,
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
-                                  side:
-                                      BorderSide(color: Colors.blue, width: 1),
+                                  side: BorderSide(
+                                      color: Colors.blue, width: 1.w),
                                 ),
                                 minimumSize: Size(158.w, 52.h),
                               ),
@@ -216,14 +212,14 @@ class _Course_cState extends State<Course_c> {
                                     context,
                                     MaterialPageRoute(
                                         builder: (context) =>
-                                            Bottom_Navigation()));
+                                            const Bottom_Navigation()));
                               },
                               style: ElevatedButton.styleFrom(
                                 primary: Colors.white,
                                 shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(20),
-                                  side:
-                                      BorderSide(color: Colors.blue, width: 1),
+                                  borderRadius: BorderRadius.circular(20.r),
+                                  side: BorderSide(
+                                      color: Colors.blue, width: 1.w),
                                 ),
                                 minimumSize: Size(158.w, 52.h),
                               ),

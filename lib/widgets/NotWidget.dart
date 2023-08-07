@@ -66,7 +66,7 @@ class _NotWidgetState extends State<NotWidget> {
                         SizedBox(height: 5.h),
                         Row(
                           children: [
-                            Icon(
+                            const Icon(
                               Icons.person,
                               color: Colors.grey,
                               size: 18,

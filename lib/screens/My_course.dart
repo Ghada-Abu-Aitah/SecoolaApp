@@ -3,6 +3,8 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/screens/Completed.dart';
 import 'package:secoola/screens/Continue_c.dart';
+import 'package:secoola/widgets/ProgWidget.dart';
+import 'package:secoola/widgets/Search_barWidget.dart';
 import 'package:secoola/widgets/c_Widget.dart';
 
 class My_course extends StatefulWidget {
@@ -13,14 +15,7 @@ class My_course extends StatefulWidget {
 }
 
 class My_courseState extends State<My_course> {
-  TextEditingController _searchController = TextEditingController();
-
   bool result = true;
-
-  void dispose() {
-    _searchController.dispose();
-    super.dispose();
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -53,39 +48,7 @@ class My_courseState extends State<My_course> {
               ],
             ),
             SizedBox(height: 50.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 25),
-              child: SingleChildScrollView(
-                physics: const BouncingScrollPhysics(),
-                child: Container(
-                  width: 335.w,
-                  height: 48.h,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Row(
-                    children: [
-                      const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Icon(Icons.search, color: Colors.grey),
-                      ),
-                      Expanded(
-                        child: TextField(
-                          controller: _searchController,
-                          style: const TextStyle(color: Colors.black),
-                          decoration: const InputDecoration(
-                            hintText: 'Search for anything..',
-                            hintStyle: TextStyle(color: Colors.grey),
-                            border: InputBorder.none,
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ),
-            ),
+            const Search_bar(),
           ],
         ),
       ),
@@ -156,62 +119,7 @@ class My_courseState extends State<My_course> {
                 children: [
                   const Course(),
                   SizedBox(height: 15.h),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Progress',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                          SizedBox(height: 5.h),
-                          Align(
-                            child: Text(
-                              '20/29 lesson',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(width: 100.w),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Due Time',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                          SizedBox(height: 5.h),
-                          Text(
-                            'November 2,2021',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 14.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                  const ProgWidget(),
                 ],
               ),
               SizedBox(height: 25.h),
@@ -236,62 +144,7 @@ class My_courseState extends State<My_course> {
                 children: [
                   const Course(),
                   SizedBox(height: 15.h),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Progress',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                          SizedBox(height: 5.h),
-                          Align(
-                            child: Text(
-                              '7/32 lesson',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(width: 100.w),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Due Time',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                          SizedBox(height: 5.h),
-                          Text(
-                            'August 24,2021',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 14.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                  const ProgWidget(),
                 ],
               ),
               SizedBox(height: 25.h),
@@ -308,62 +161,7 @@ class My_courseState extends State<My_course> {
                 children: [
                   const Course(),
                   SizedBox(height: 15.h),
-                  Row(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Progress',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                          SizedBox(height: 5.h),
-                          Align(
-                            child: Text(
-                              '28/40 lesson',
-                              style: TextStyle(
-                                color: Colors.black,
-                                fontWeight: FontWeight.normal,
-                                fontSize: 14.sp,
-                                fontFamily: 'SF Pro Rounded',
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                      SizedBox(width: 100.w),
-                      Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Text(
-                            'Due Time',
-                            style: TextStyle(
-                              color: Colors.grey,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 12.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                          SizedBox(height: 5.h),
-                          Text(
-                            'November 2,2021',
-                            style: TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.normal,
-                              fontSize: 14.sp,
-                              fontFamily: 'SF Pro Rounded',
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  ),
+                  const ProgWidget(),
                 ],
               ),
               SizedBox(height: 25.h),

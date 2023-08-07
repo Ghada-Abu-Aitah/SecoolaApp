@@ -69,7 +69,7 @@ class _Sign_upState extends State<Sign_up> with SingleTickerProviderStateMixin {
                 horizontal: 25,
               ),
               child: Text(
-                'Creat your account to start your course lessons.',
+                'Create your account to start your course lessons.',
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 14.sp,

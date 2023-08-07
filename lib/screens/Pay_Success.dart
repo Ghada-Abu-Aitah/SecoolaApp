@@ -80,10 +80,10 @@ class _Pay_SuccessState extends State<Pay_Success> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          Bottom_Navigation()));
+                                          const Bottom_Navigation()));
                             },
                             style: ElevatedButton.styleFrom(
-                              primary: Color(0xFF00A9B7),
+                              primary: const Color(0xFF00A9B7),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(20),
                               ),
@@ -105,7 +105,7 @@ class _Pay_SuccessState extends State<Pay_Success> {
                                   context,
                                   MaterialPageRoute(
                                       builder: (context) =>
-                                          Bottom_Navigation()));
+                                          const Bottom_Navigation()));
                             },
                             child: Text(
                               'Back to Home',

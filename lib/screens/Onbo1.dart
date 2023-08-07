@@ -113,8 +113,7 @@ class _Onbo1State extends State<Onbo1> {
             padding: const EdgeInsets.symmetric(horizontal: 34),
             child: Column(
               children: [
-
-                SizedBox(height: 10.h),
+                SizedBox(height: 20.h),
                 Text(
                   'Find your best experience while studying and seeking knowledge here',
                   textAlign: TextAlign.center,
@@ -124,7 +123,7 @@ class _Onbo1State extends State<Onbo1> {
                     color: Colors.grey,
                   ),
                 ),
-                SizedBox(height: 120.h),
+                SizedBox(height: 30.h),  // Reduce the space here
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacement(
@@ -150,7 +149,7 @@ class _Onbo1State extends State<Onbo1> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20.h),
+                SizedBox(height: 20.h),  // Reduce the space here
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacement(
@@ -177,10 +176,10 @@ class _Onbo1State extends State<Onbo1> {
                     ),
                   ),
                 ),
+                SizedBox(height: 80),
               ],
             ),
           ),
-
         ],
       ),
     );

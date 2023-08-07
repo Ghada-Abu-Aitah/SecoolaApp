@@ -86,10 +86,10 @@ class _CustomBottomSheetState extends State<CustomBottomSheet> {
                                 Navigator.pushReplacement(
                                     context,
                                     MaterialPageRoute(
-                                        builder: (context) => Bottom_Navigation()));
+                                        builder: (context) => const Bottom_Navigation()));
                               },
                               style: ElevatedButton.styleFrom(
-                                primary: Color(0xFF00A9B7),
+                                primary: const Color(0xFF00A9B7),
                                 shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(20),
                                 ),

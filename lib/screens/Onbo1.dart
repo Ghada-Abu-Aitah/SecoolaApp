@@ -123,7 +123,7 @@ class _Onbo1State extends State<Onbo1> {
                     color: Colors.grey,
                   ),
                 ),
-                SizedBox(height: 30.h),  // Reduce the space here
+                SizedBox(height: 30.h),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacement(
@@ -149,7 +149,7 @@ class _Onbo1State extends State<Onbo1> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20.h),  // Reduce the space here
+                SizedBox(height: 20.h),
                 ElevatedButton(
                   onPressed: () {
                     Navigator.pushReplacement(
@@ -176,7 +176,7 @@ class _Onbo1State extends State<Onbo1> {
                     ),
                   ),
                 ),
-                SizedBox(height: 80),
+                SizedBox(height: 80.h),
               ],
             ),
           ),

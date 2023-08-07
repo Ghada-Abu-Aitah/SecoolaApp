@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:secoola/screens/Bottom_Navigation.dart';
 import 'package:secoola/screens/Splash.dart';
 
 void main() {
@@ -17,7 +18,7 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (context, child) => const MaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Splash(),
+        home: Bottom_Navigation(),
       ),
     );
   }

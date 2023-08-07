@@ -235,7 +235,7 @@ class _LoginState extends State<Login> {
                           focusedBorder: OutlineInputBorder(
                             borderSide: BorderSide(
                               color: const Color(0xFF00A9B7),
-                              width: 1.w,
+                              width: 1.0.w,
                             ),
                             borderRadius: BorderRadius.circular(15),
                           ),
@@ -254,13 +254,14 @@ class _LoginState extends State<Login> {
                           ),
                         ),
                         validator: (String? value) {
-                          if (value == null || value.trim().length == 0) {
+                          if (value == null || value.trim().isEmpty) {
                             return "*Required";
                           }
                           if (value.trim().length < 6) {
                             return "password should not be less than 6 characters";
-                          } else
+                          } else {
                             return null;
+                          }
                         }),
                   ),
                   SizedBox(

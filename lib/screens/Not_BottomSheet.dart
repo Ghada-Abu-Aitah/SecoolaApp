@@ -16,6 +16,7 @@ class _Not_BottomSheetState extends State<Not_BottomSheet> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
         leading: IconButton(

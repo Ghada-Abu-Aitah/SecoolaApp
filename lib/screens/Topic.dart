@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/screens/Bottom_Navigation.dart';
-import 'package:secoola/screens/Home.dart';
 
 class Topic extends StatefulWidget {
   const Topic({Key? key}) : super(key: key);
@@ -30,7 +29,7 @@ class _TopicState extends State<Topic> {
                 height: 60.h,
                 decoration: BoxDecoration(
                   shape: BoxShape.rectangle,
-                  borderRadius: BorderRadius.circular(15),
+                  borderRadius: BorderRadius.circular(15.r),
                   border: Border.all(
                     color: isSelected[index] ? Colors.blue : Colors.transparent,
                     width: 3.w,
@@ -171,7 +170,7 @@ class _TopicState extends State<Topic> {
               style: ElevatedButton.styleFrom(
                 primary: const Color(0xFF00A9B7),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(20),
+                  borderRadius: BorderRadius.circular(20).r,
                 ),
                 minimumSize: Size(335.w, 52.h),
               ),

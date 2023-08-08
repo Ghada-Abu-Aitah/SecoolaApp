@@ -82,31 +82,26 @@ class _Continue_cState extends State<Continue_c> {
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.yellow.shade100),
             ),
-            SingleChildScrollView(
-              child: Container(
-                height: 400.h,
-                width: 410.w,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: SingleChildScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        DesignWidget(),
-                        SizedBox(height: 40.h),
-                        ConWidget()
-                      ],
-                    ),
-                  ),
+            Container(
+              height: 450.h,
+              width: 410.w,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 15.h),
+                    const DesignWidget(),
+                    SizedBox(height: 35.h),
+                    const ConWidget(),
+                  ],
                 ),
               ),
             ),
-            SizedBox(height: 10.h),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: InkWell(
@@ -170,9 +165,9 @@ class _Continue_cState extends State<Continue_c> {
               ),
             ),
             const SizedBox(height: 20),
-            Continue(),
+            const Continue(),
             SizedBox(height: 20.h),
-            Continue(),
+            const Continue(),
             SizedBox(height: 25.h),
           ],
         ),

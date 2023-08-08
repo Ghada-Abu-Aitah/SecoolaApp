@@ -66,8 +66,6 @@ class _ConWidgetState extends State<ConWidget> {
               ],
             ),
           ),
-          SizedBox(height: 20.h),
-          if (current == 0) ...[] else ...[],
         ],
       ),
     );

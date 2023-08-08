@@ -87,7 +87,7 @@ class _FAQsState extends State<FAQs> {
       body: ListView(
         children: [
           ExpansionPanelList(
-            animationDuration: const Duration(seconds: 1),
+            animationDuration: const Duration(milliseconds: 500),
             elevation: 0,
             expandedHeaderPadding: EdgeInsets.zero,
             dividerColor: Colors.grey.shade200,

@@ -74,38 +74,31 @@ class _Course_cState extends State<Course_c> {
           children: [
             Container(
               width: 375.w,
-              height: 330.h,
+              height: 310.h,
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.yellow.shade100),
             ),
-            SingleChildScrollView(
-              physics: const BouncingScrollPhysics(),
-              child: Container(
-                height: 400.h,
-                width: 410.w,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 20),
-                  child: SingleChildScrollView(
-                    physics: const BouncingScrollPhysics(),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        SizedBox(height: 20.h),
-                        const DesignWidget(),
-                        SizedBox(height: 45.h),
-                        const ButtonWidget()
-                      ],
-                    ),
-                  ),
+            Container(
+              height: 750.h,
+              width: 410.w,
+              decoration: BoxDecoration(
+                color: Colors.white,
+                borderRadius: BorderRadius.circular(10),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 20),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    SizedBox(height: 15.h),
+                    const DesignWidget(),
+                    SizedBox(height: 35.h),
+                    const ButtonWidget()
+                  ],
                 ),
               ),
             ),
-            SizedBox(height: 30.h),
             Container(
               decoration: BoxDecoration(
                 color: Colors.white,
@@ -113,18 +106,17 @@ class _Course_cState extends State<Course_c> {
                   BoxShadow(
                     color: Colors.grey.shade200.withOpacity(0.50),
                     spreadRadius: 15,
-                    blurRadius: 5,
+                    blurRadius: 1,
                     offset: const Offset(0, 10),
                   ),
                 ],
               ),
               child: SizedBox(
-                // height: 242.h,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 15),
                   child: Column(
                     children: [
-                      SizedBox(height: 10.h),
+                      SizedBox(height: 5.h),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [

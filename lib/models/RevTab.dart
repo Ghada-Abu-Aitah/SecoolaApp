@@ -8,6 +8,7 @@ class RevTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        SizedBox(height: 10.h),
         Text(
           'Student reviews',
           style: TextStyle(

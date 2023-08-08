@@ -39,6 +39,7 @@ class _ButtonWidgetState extends State<ButtonWidget> {
                         current = index;
                       });
                     },
+
                     child: AnimatedContainer(
                       duration: const Duration(milliseconds: 300),
                       height: 38.h,

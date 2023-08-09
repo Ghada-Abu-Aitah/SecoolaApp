@@ -183,8 +183,6 @@ class _AccountState extends State<Account> {
                       ),
                       child: Column(
                         children: [
-                          //library_books_rounded
-                          //Certificate
                           const AccountWidget(
                             icon: Icons.library_books_rounded,
                             title: 'Certificate',

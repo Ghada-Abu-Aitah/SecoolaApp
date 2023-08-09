@@ -5,7 +5,6 @@ import 'package:secoola/widgets/CategoryWidget.dart';
 import 'package:secoola/widgets/H_coursesWidget.dart';
 import 'package:secoola/widgets/TopicWidget.dart';
 import 'package:secoola/screens/Not_BottomSheet.dart';
-
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:secoola/widgets/tWidget.dart';
 import 'package:secoola/widgets/topWidget.dart';
@@ -28,6 +27,108 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
+    void _bottom(BuildContext cont) {
+      showModalBottomSheet(
+        constraints: BoxConstraints(maxHeight: 800.h),
+        isScrollControlled: true,
+        context: cont,
+        elevation: 10,
+        backgroundColor: Colors.transparent,
+        builder: (cont) => Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(35.r)),
+            color: Colors.white,
+          ),
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 650.h,
+                      child: const Cart_f(),
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                top: -70,
+                right: 25,
+                child: Container(
+                  height: 52.h,
+                  width: 52.w,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15.r),
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(cont);
+                    },
+                    icon: Icon(Icons.cancel,
+                        size: 30, color: Colors.grey.shade500),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
+    void _bottom_N(BuildContext cont) {
+      showModalBottomSheet(
+        constraints: BoxConstraints(maxHeight: 800.h),
+        isScrollControlled: true,
+        context: cont,
+        elevation: 10,
+        backgroundColor: Colors.transparent,
+        builder: (cont) => Container(
+          width: double.infinity,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.vertical(top: Radius.circular(35.r)),
+            color: Colors.white,
+          ),
+          child: Stack(
+            clipBehavior: Clip.none,
+            children: [
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 650.h,
+                      child: const Not_BottomSheet(),
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                top: -70,
+                right: 25,
+                child: Container(
+                  height: 52.h,
+                  width: 52.w,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(15.r),
+                  ),
+                  child: IconButton(
+                    onPressed: () {
+                      Navigator.pop(cont);
+                    },
+                    icon: Icon(Icons.cancel,
+                        size: 30, color: Colors.grey.shade500),
+                  ),
+                ),
+              ),
+            ],
+          ),
+        ),
+      );
+    }
+
     return Scaffold(
       backgroundColor: const Color(0xFFFAFAFA),
       appBar: AppBar(
@@ -88,19 +189,7 @@ class _HomeState extends State<Home> {
                       ),
                       child: IconButton(
                         onPressed: () {
-                          showModalBottomSheet(
-                            constraints: BoxConstraints(maxHeight: 678.h),
-                            isScrollControlled: true,
-                            context: context,
-                            elevation: 10,
-                            backgroundColor: Colors.white,
-                            builder: (BuildContext context) {
-                              return SizedBox(
-                                height: 800.h,
-                                child: const Cart_f(),
-                              );
-                            },
-                          );
+                          _bottom(context);
                         },
                         icon: const Row(
                           mainAxisAlignment: MainAxisAlignment.end,
@@ -125,19 +214,7 @@ class _HomeState extends State<Home> {
                       ),
                       child: IconButton(
                         onPressed: () {
-                          showModalBottomSheet(
-                            constraints: BoxConstraints(maxHeight: 678.h),
-                            isScrollControlled: true,
-                            context: context,
-                            elevation: 10,
-                            backgroundColor: Colors.white,
-                            builder: (BuildContext context) {
-                              return SizedBox(
-                                height: 800.h,
-                                child: const Not_BottomSheet(),
-                              );
-                            },
-                          );
+                          _bottom_N(context);
                         },
                         icon: const Row(
                           mainAxisAlignment: MainAxisAlignment.end,

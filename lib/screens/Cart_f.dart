@@ -13,49 +13,41 @@ class Cart_f extends StatefulWidget {
 class _Cart_fState extends State<Cart_f> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SingleChildScrollView(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(height: 40.h),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 30),
-              child: Text(
-                'Your Items',
-                style: TextStyle(
-                  color: Colors.black,
-                  fontWeight: FontWeight.normal,
-                  fontSize: 18.sp,
-                  fontFamily: 'SF Pro Rounded',
-                ),
+    return SingleChildScrollView(
+      physics: const BouncingScrollPhysics(),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          SizedBox(height: 40.h),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 30),
+            child: Text(
+              'Your Items',
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.normal,
+                fontSize: 18.sp,
+                fontFamily: 'SF Pro Rounded',
               ),
             ),
-            SizedBox(height: 20.h),
-            const NotWidget(),
-            SizedBox(height: 40.h),
-            const NotWidget(),
-          ],
-        ),
-      ),
-      bottomNavigationBar: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.grey.shade200.withOpacity(0.50),
-              spreadRadius: 15,
-              blurRadius: 5,
-              offset: const Offset(0, 10),
+          ),
+          SizedBox(height: 20.h),
+          const NotWidget(),
+          SizedBox(height: 40.h),
+          const NotWidget(),
+          SizedBox(height: 120.h),
+          Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              boxShadow: [
+                BoxShadow(
+                  color: Colors.grey.shade200.withOpacity(0.50),
+                  spreadRadius: 15,
+                  blurRadius: 5,
+                  offset: const Offset(0, 10),
+                ),
+              ],
             ),
-          ],
-        ),
-        child: SizedBox(
-          height: 160.h,
-          child: BottomAppBar(
-            height: 200.h,
-            color: Colors.white,
-            elevation: 10,
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20),
               child: Column(
@@ -73,7 +65,6 @@ class _Cart_fState extends State<Cart_f> {
                           fontFamily: 'SF Pro Rounded',
                         ),
                       ),
-                      // Button widget
                       ElevatedButton(
                         onPressed: () {},
                         style: ElevatedButton.styleFrom(
@@ -148,11 +139,12 @@ class _Cart_fState extends State<Cart_f> {
                       ),
                     ],
                   ),
+                  SizedBox(height: 10.h),
                 ],
               ),
             ),
           ),
-        ),
+        ],
       ),
     );
   }

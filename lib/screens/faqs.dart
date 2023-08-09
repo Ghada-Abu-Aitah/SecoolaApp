@@ -54,7 +54,6 @@ class _FAQsState extends State<FAQs> {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Column(
-              // crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Row(
                   children: [

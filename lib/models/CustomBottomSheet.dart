@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:secoola/screens/Bottom_Navigation.dart';
+import '../view/screens/Bottom_Navigation.dart';
 
 class CustomBottomSheet extends StatefulWidget {
   const CustomBottomSheet({Key? key}) : super(key: key);

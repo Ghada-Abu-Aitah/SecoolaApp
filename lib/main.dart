@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:secoola/screens/Bottom_Navigation.dart';
-import 'package:secoola/screens/Splash.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
+import 'package:secoola/view/screens/Getx.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,10 +16,13 @@ class MyApp extends StatelessWidget {
       designSize: const Size(375, 812),
       minTextAdapt: true,
       splitScreenMode: true,
-      builder: (context, child) => const MaterialApp(
+      builder: (context, child) =>  GetMaterialApp(
         debugShowCheckedModeBanner: false,
-        home: Splash(),
+        initialRoute: Getx.Splash,
+        getPages: getPages,
       ),
     );
   }
 }
+
+

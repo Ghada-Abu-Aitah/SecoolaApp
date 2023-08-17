@@ -16,6 +16,7 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   final TextEditingController _searchController = TextEditingController();
 
+  @override
   void dispose() {
     _searchController.dispose();
     super.dispose();

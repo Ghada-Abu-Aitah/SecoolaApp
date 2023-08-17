@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:secoola/models/API/lecture_controller.dart';
+import 'package:secoola/models/API/models/lecture.dart';
+
 //import 'package:youtube_player_flutter/youtube_player_flutter.dart';
 import '../widgets/ButtonWidget.dart';
 import '../widgets/DesignWidget.dart';
@@ -79,23 +82,47 @@ class _Course_cState extends State<Course_c> {
                 borderRadius: BorderRadius.circular(20),
                 color: Colors.yellow.shade100,
               ),
-              // child: YoutubePlayer(
-              //   controller: _controller,
-              //   showVideoProgressIndicator: true,
-              //   onReady: () => debugPrint('Ready'),
-              //   bottomActions: [
-              //     CurrentPosition(),
-              //     ProgressBar(
-              //       isExpanded: true,
-              //       colors: const ProgressBarColors(
-              //         playedColor: Colors.amber,
-              //         handleColor: Colors.amberAccent,
-              //       ),
-              //     ),
-              //     const PlaybackSpeedButton(),
-              //   ],
-              // ),
+              child: FutureBuilder<List<Lecture>>(
+                future: LectureController().getLecture(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                    return Image(
+                      image: NetworkImage(snapshot.data![0].image),
+                      fit: BoxFit.cover,
+                    );
+                  } else {
+                    return Center(
+                      child: Text(
+                        'No Data',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 26.sp,
+                        ),
+                      ),
+                    );
+                  }
+                },
+              ),
             ),
+            // child: YoutubePlayer(
+            //   controller: _controller,
+            //   showVideoProgressIndicator: true,
+            //   onReady: () => debugPrint('Ready'),
+            //   bottomActions: [
+            //     CurrentPosition(),
+            //     ProgressBar(
+            //       isExpanded: true,
+            //       colors: const ProgressBarColors(
+            //         playedColor: Colors.amber,
+            //         handleColor: Colors.amberAccent,
+            //       ),
+            //     ),
+            //     const PlaybackSpeedButton(),
+            //   ],
+            // ),
+
             Container(
               height: 750.h,
               width: 410.w,

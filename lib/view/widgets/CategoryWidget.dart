@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import '../../models/API/category_controller.dart';
+import '../../models/API/models/category.dart';
 
 class CategoryWidget extends StatelessWidget {
   const CategoryWidget({super.key});
@@ -9,213 +11,95 @@ class CategoryWidget extends StatelessWidget {
     return SingleChildScrollView(
       physics: const BouncingScrollPhysics(),
       scrollDirection: Axis.horizontal,
-      child: Column(
-        children: [
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 20),
-            child: Row(
+      child: FutureBuilder<List<MyCategory>>(
+        future: CategoryController().getCategory(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(
+              child: CircularProgressIndicator(),
+            );
+          } else if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+            final List<MyCategory> categories = snapshot.data!;
+
+            return Column(
               children: [
-                Container(
-                  width: 76.w,
-                  height: 40.h,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 20),
                   child: Row(
                     children: [
-                      const Icon(
-                        Icons.image,
-                        color: Colors.blue,
-                      ),
-                      SizedBox(width: 5.w),
-                      Text(
-                        'Art',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 14.sp,
-                          fontFamily: 'SF Pro Rounded',
-                        ),
-                      ),
+                      for (int i = 0; i < 3; i++)
+                        if (i < categories.length)
+                          Padding(
+                            padding: EdgeInsets.only(right: 10.w),
+                            child: _buildCategoryWidget(
+                                categories[i].image, categories[i].name),
+                          ),
                     ],
                   ),
                 ),
-                SizedBox(width: 10.w),
-                Container(
-                  width: 103.w,
-                  height: 40.h,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.laptop,
-                        color: Colors.black,
-                      ),
-                      SizedBox(width: 5.w),
-                      Text(
-                        'Coding',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 14.sp,
-                          fontFamily: 'SF Pro Rounded',
+                SizedBox(height: 10.h),
+                Row(
+                  children: [
+                    for (int i = 3; i < 5; i++)
+                      if (i < categories.length)
+                        Padding(
+                          padding: EdgeInsets.only(right: 10.w),
+                          child: _buildCategoryWidget(
+                              categories[i].image, categories[i].name),
                         ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(width: 10.w),
-                Container(
-                  width: 100.w,
-                  height: 40.h,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.design_services,
-                        color: Colors.red,
-                      ),
-                      SizedBox(width: 5.w),
-                      Text(
-                        'Design',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 14.sp,
-                          fontFamily: 'SF Pro Rounded',
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(width: 10.w),
-                Container(
-                  width: 98.w,
-                  height: 40.h,
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  padding: const EdgeInsets.symmetric(horizontal: 10),
-                  child: Row(
-                    children: [
-                      const Icon(
-                        Icons.health_and_safety,
-                        color: Colors.green,
-                      ),
-                      SizedBox(width: 5.w),
-                      Text(
-                        'Health',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.normal,
-                          fontSize: 14.sp,
-                          fontFamily: 'SF Pro Rounded',
-                        ),
-                      ),
-                    ],
-                  ),
+                  ],
                 ),
               ],
+            );
+          } else {
+            return Center(
+              child: Text(
+                'No Data',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 26.sp,
+                ),
+              ),
+            );
+          }
+        },
+      ),
+    );
+  }
+
+  Widget _buildCategoryWidget(String imageUrl, String title) {
+    return Container(
+      width: 130.w,
+      height: 40.h,
+      decoration: BoxDecoration(
+        color: Colors.white,
+        borderRadius: BorderRadius.circular(15),
+      ),
+      padding: const EdgeInsets.symmetric(horizontal: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          SizedBox(
+            width: 18.w,
+            height: 20.h,
+            child: Center(
+              child: Image(
+                image: NetworkImage(imageUrl),
+                fit: BoxFit.cover,
+              ),
             ),
           ),
-          SizedBox(height: 20.h),
-          Row(
-            children: [
-              Container(
-                width: 113.w,
-                height: 40.h,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                padding: const EdgeInsets.symmetric(horizontal: 5),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.business_center,
-                      color: Colors.brown,
-                    ),
-                    SizedBox(width: 5.w),
-                    Text(
-                      'Business',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14.sp,
-                        fontFamily: 'SF Pro Rounded',
-                      ),
-                    ),
-                  ],
-                ),
+          SizedBox(width: 5.w),
+          Center(
+            child: Text(
+              title,
+              style: TextStyle(
+                color: Colors.black,
+                fontWeight: FontWeight.normal,
+                fontSize: 14.sp,
+                fontFamily: 'SF Pro Rounded',
               ),
-              SizedBox(width: 10.w),
-              Container(
-                width: 120.w,
-                height: 40.h,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.shopping_bag_sharp,
-                      color: Colors.pink.shade200,
-                    ),
-                    SizedBox(width: 5.w),
-                    Text(
-                      'Marketing',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14.sp,
-                        fontFamily: 'SF Pro Rounded',
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-              SizedBox(width: 10.w),
-              Container(
-                width: 111.w,
-                height: 40.h,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.run_circle_outlined,
-                      color: Colors.yellow,
-                    ),
-                    SizedBox(width: 5.w),
-                    Text(
-                      'Lifestyle',
-                      style: TextStyle(
-                        color: Colors.black,
-                        fontWeight: FontWeight.normal,
-                        fontSize: 14.sp,
-                        fontFamily: 'SF Pro Rounded',
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
+            ),
           ),
         ],
       ),

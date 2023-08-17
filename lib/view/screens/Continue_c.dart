@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../models/API/lecture_controller.dart';
+import '../../models/API/models/lecture.dart';
 import '../widgets/ConWidget.dart';
 import '../widgets/ContinueWidget.dart';
 import '../widgets/DesignWidget.dart';
@@ -75,6 +77,29 @@ class _Continue_cState extends State<Continue_c> {
               decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(20),
                   color: Colors.yellow.shade100),
+              child: FutureBuilder<List<Lecture>>(
+                future: LectureController().getLecture(),
+                builder: (context, snapshot) {
+                  if (snapshot.connectionState == ConnectionState.waiting) {
+                    return const Center(child: CircularProgressIndicator());
+                  } else if (snapshot.hasData && snapshot.data!.isNotEmpty) {
+                    return Image(
+                      image: NetworkImage(snapshot.data![1].image),
+                      fit: BoxFit.cover,
+                    );
+                  } else {
+                    return const Center(
+                      child: Text(
+                        'No Data',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 30,
+                        ),
+                      ),
+                    );
+                  }
+                },
+              ),
             ),
             Container(
               height: 450.h,

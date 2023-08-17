@@ -1,6 +1,9 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import '../../models/API/category_controller.dart';
+import '../../models/API/models/category.dart';
 import '../screens/Getx.dart';
 
 class CoursesItem {
@@ -64,61 +67,87 @@ class H_coursesWidget extends StatelessWidget {
                         borderRadius: BorderRadius.circular(20),
                         color: Colors.pink.shade50,
                       ),
-                      child: Column(
+                      child: Stack(
                         children: [
-                          Padding(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 15, vertical: 15),
-                            child: Row(
-                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                              children: [
-                                Container(
-                                  height: 28.h,
-                                  width: 49.w,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFFFFFFFF),
-                                    borderRadius: BorderRadius.circular(10),
+                          FutureBuilder<List<MyCategory>>(
+                            future: CategoryController().getCategory(),
+                            builder: (context, snapshot) {
+                              if (snapshot.connectionState ==
+                                  ConnectionState.waiting) {
+                                return const Center(
+                                  child: CircularProgressIndicator(),
+                                );
+                              } else if (snapshot.hasData &&
+                                  snapshot.data!.isNotEmpty) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 220.w,
+                                    height: 140.h,
+                                    child: Image(
+                                      image:
+                                          NetworkImage(snapshot.data![i].image),
+                                      fit: BoxFit.cover,
+                                    ),
                                   ),
-                                  child: Row(
-                                    children: [
-                                      SizedBox(width: 6.w),
-                                      const Icon(
-                                        Icons.star,
-                                        color: Colors.orangeAccent,
-                                        size: 14,
-                                      ),
-                                      SizedBox(width: 4.w),
-                                      Text(
-                                        '4.8',
-                                        style: TextStyle(
-                                          fontSize: 12.sp,
-                                          color: Colors.black,
-                                        ),
-                                      ),
-                                    ],
+                                );
+                              } else {
+                                return Center(
+                                  child: Text(
+                                    'No Data',
+                                    style: TextStyle(
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 26.sp,
+                                    ),
                                   ),
-                                ),
-                               const Spacer(),
-                                Container(
-                                  height: 28.h,
-                                  width: 28.w,
-                                  decoration: BoxDecoration(
-                                    color: const Color(0xFFFFFFFF),
-                                    borderRadius: BorderRadius.circular(10),
-                                  ),
-                                  child: const Icon(
-                                    Icons.favorite,
-                                    color:  Color(0xFFFF6666),
-                                    size: 16,
-                                  ),
-                                ),
-                              ],
+                                );
+                              }
+                            },
+                          ),
+                          Positioned(
+                            top: 10,
+                            right: 10,
+                            child: Container(
+                              height: 28.h,
+                              width: 28.w,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFFFFFFF),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: const Icon(
+                                Icons.favorite,
+                                color: Color(0xFFFF6666),
+                                size: 16,
+                              ),
                             ),
                           ),
-                          InkWell(
-                            onTap: () {},
+                          Positioned(
+                            top: 10,
+                            left: 10,
                             child: Container(
-                              margin: const EdgeInsets.all(10),
+                              height: 28.h,
+                              width: 49.w,
+                              decoration: BoxDecoration(
+                                color: const Color(0xFFFFFFFF),
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              child: Row(
+                                children: [
+                                  SizedBox(width: 6.w),
+                                  const Icon(
+                                    Icons.star,
+                                    color: Colors.orangeAccent,
+                                    size: 14,
+                                  ),
+                                  SizedBox(width: 4.w),
+                                  Text(
+                                    '4.8',
+                                    style: TextStyle(
+                                      fontSize: 12.sp,
+                                      color: Colors.black,
+                                    ),
+                                  ),
+                                ],
+                              ),
                             ),
                           ),
                         ],
@@ -131,15 +160,37 @@ class H_coursesWidget extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        SizedBox(width: 30.w),
-                        Text(
-                          items[i].title,
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.normal,
-                            fontSize: 14.sp,
-                            fontFamily: 'SF Pro Rounded',
-                          ),
+                        FutureBuilder<List<MyCategory>>(
+                          future: CategoryController().getCategory(),
+                          builder: (context, snapshot) {
+                            if (snapshot.connectionState ==
+                                ConnectionState.waiting) {
+                              return const Center(
+                                child: CircularProgressIndicator(),
+                              );
+                            } else if (snapshot.hasData &&
+                                snapshot.data!.isNotEmpty) {
+                              return Text(
+                                snapshot.data![i].name,
+                                style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.normal,
+                                  fontSize: 14.sp,
+                                  fontFamily: 'SF Pro Rounded',
+                                ),
+                              );
+                            } else {
+                              return const Center(
+                                child: Text(
+                                  'No Data',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 30,
+                                  ),
+                                ),
+                              );
+                            }
+                          },
                         ),
                         SizedBox(height: 10.h),
                         Row(
@@ -185,7 +236,7 @@ class H_coursesWidget extends StatelessWidget {
                                 child: Text(
                                   items[i].text3,
                                   style: TextStyle(
-                                    color:  const Color(0xFFFF6666),
+                                    color: const Color(0xFFFF6666),
                                     fontWeight: FontWeight.normal,
                                     fontSize: 12.sp,
                                     fontFamily: 'SF Pro Rounded',
